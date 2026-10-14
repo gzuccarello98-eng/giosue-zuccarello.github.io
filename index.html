@@ -89,7 +89,7 @@
             <!-- Immagine Rotonda -->
             <div class="md:col-span-5 flex justify-center">
                 <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden bg-neutral-200 dark:bg-neutral-800 shadow-md border-2 border-neutral-200 dark:border-neutral-800 flex-shrink-0">
-                    <img src="profilo.jpg" alt="Giosuè Zuccarello" class="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 hover:scale-105 transition duration-700">
+                    <img src="profilo.jpg" alt="Giosuè Zuccarello" class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-700">
                 </div>
             </div>
             <div class="md:col-span-7 space-y-6">
@@ -109,18 +109,14 @@
         </div>
     </section>
 
-    <!-- 2. Progetti (Sezioni Foto & Video con Sotto-categorie Fotografiche) -->
+    <!-- 2. Progetti -->
     <section id="projects" class="py-24 bg-neutral-100/60 dark:bg-neutral-900/40 border-y border-neutral-200/80 dark:border-neutral-800/80">
         <div class="max-w-6xl mx-auto px-6">
-            
-            <!-- Intestazione Principale & Main Switch (Foto / Video) -->
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
                 <div>
                     <span class="text-[11px] font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">I miei lavori</span>
                     <h2 class="text-2xl sm:text-3xl font-light tracking-tight text-neutral-900 dark:text-neutral-100 mt-1">Portfolio</h2>
                 </div>
-
-                <!-- Switch principale Foto/Video -->
                 <div class="flex p-1 rounded-full bg-neutral-200/70 dark:bg-neutral-800/70 border border-neutral-300/50 dark:border-neutral-700/50 w-fit">
                     <button id="btn-show-photo" onclick="switchMainTab('photo')" class="px-6 py-2 rounded-full text-xs font-medium bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 shadow-sm transition-all duration-300 flex items-center gap-2">
                         <i class="fa-solid fa-camera text-[10px]"></i> Foto
@@ -133,8 +129,6 @@
 
             <!-- CONTENUTO PRINCIPALE FOTO -->
             <div id="section-photo" class="space-y-8 transition-all duration-500">
-                
-                <!-- Sotto-menu per le 3 Categorie Fotografiche -->
                 <div class="flex flex-wrap gap-2 border-b border-neutral-200 dark:border-neutral-800 pb-4">
                     <button onclick="switchPhotoCategory('portraits')" id="btn-cat-portraits" class="cat-btn px-4 py-1.5 rounded-lg text-xs font-medium bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 transition shadow-sm">
                         Ritratti
@@ -147,79 +141,73 @@
                     </button>
                 </div>
 
-                <!-- 1. CATEGORIA: RITRATTI -->
                 <div id="cat-portraits" class="photo-category grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-                    <!-- Foto 1 -->
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" 
-                    data-media="a.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="a.jpg">
                         <img src="a.jpg" alt="Ritratto 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" 
-                    data-media="b.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="b.jpg">
                         <img src="b.jpg" alt="Ritratto 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" 
-                    data-media="c.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="c.jpg">
                         <img src="c.jpg" alt="Ritratto 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" 
-                    data-media="d.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="d.jpg">
                         <img src="d.jpg" alt="Ritratto 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" 
-                    data-media="e.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="e.jpg">
                         <img src="e.jpg" alt="Ritratto 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" 
-                    data-media="f.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="f.jpg">
                         <img src="f.jpg" alt="Ritratto 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
                 </div>
 
-                <!-- 2. CATEGORIA: STREET PHOTOGRAPHY (Inizialmente nascosta) -->
                 <div id="cat-street" class="photo-category hidden grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-                    <!-- Foto Street 1 -->
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" 
-                    data-media="g.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="g.jpg">
                         <img src="g.jpg" alt="Street 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" 
-                    data-media="h.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="h.jpg">
                         <img src="h.jpg" alt="Street 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" 
-                    data-media="i.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="i.jpg">
                         <img src="i.jpg" alt="Street 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" 
-                    data-media="l.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="l.jpg">
                         <img src="l.jpg" alt="Street 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" 
-                    data-media="m.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="m.jpg">
                         <img src="m.jpg" alt="Street 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" 
-                    data-media="n.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="n.jpg">
                         <img src="n.jpg" alt="Street 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
                 </div>
 
-                <!-- 3. CATEGORIA: EVENTI E SPETTACOLI (Inizialmente nascosta) -->
                 <div id="cat-events" class="photo-category hidden grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-                    <!-- Foto Eventi 1 -->
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" 
-                    data-media="o.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="o.jpg">
                         <img src="o.jpg" alt="Spettacolo 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="o.jpg">
+                        <img src="o.jpg" alt="Spettacolo 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
+                    </div>
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="o.jpg">
+                        <img src="o.jpg" alt="Spettacolo 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
+                    </div>
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="o.jpg">
+                        <img src="o.jpg" alt="Spettacolo 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
+                    </div>
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="o.jpg">
+                        <img src="o.jpg" alt="Spettacolo 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
+                    </div>
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800" data-media="o.jpg">
+                        <img src="o.jpg" alt="Spettacolo 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
+                    </div>
                 </div>
-
             </div>
 
-            <!-- CONTENUTO PRINCIPALE VIDEO (Inizialmente nascosto) -->
+            <!-- CONTENUTO PRINCIPALE VIDEO -->
             <div id="section-video" class="hidden transition-all duration-500">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Video 1 -->
                     <div class="space-y-3">
                         <div class="aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
                             <iframe class="w-full h-full" src="https://www.youtube.com/embed/43ykpd6cHZs" title="Fuori controllo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -229,8 +217,6 @@
                             <span class="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-200 dark:border-neutral-800 px-2 py-0.5 rounded-full">Cortometraggio</span>
                         </div>
                     </div>
-
-                    <!-- Video 2 -->
                     <div class="space-y-3">
                         <div class="aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
                             <iframe class="w-full h-full" src="https://www.youtube.com/embed/uUR31XiIr4Y" title="Pleasure" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -240,8 +226,6 @@
                             <span class="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-200 dark:border-neutral-800 px-2 py-0.5 rounded-full">Fashion-film</span>
                         </div>
                     </div>
-
-                    <!-- Video 3 -->
                     <div class="space-y-3">
                         <div class="aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
                             <iframe class="w-full h-full" src="https://www.youtube.com/embed/istmXarvRvA" title="Vinted" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -251,8 +235,6 @@
                             <span class="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-200 dark:border-neutral-800 px-2 py-0.5 rounded-full">Pubblicità</span>
                         </div>
                     </div>
-
-                    <!-- Video 4 -->
                     <div class="space-y-3">
                         <div class="aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
                             <iframe class="w-full h-full" src="https://www.youtube.com/embed/PdbWiaICitM" title="DLMG" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -264,7 +246,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -277,7 +258,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Camere -->
             <div class="p-6 rounded-2xl bg-neutral-100/50 dark:bg-neutral-900/50 border border-neutral-200/80 dark:border-neutral-800/80 space-y-3">
                 <div class="w-8 h-8 rounded-lg bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center text-neutral-700 dark:text-neutral-300">
                     <i class="fa-solid fa-camera text-xs"></i>
@@ -287,8 +267,6 @@
                     <li>Sony A7II</li>
                 </ul>
             </div>
-
-            <!-- Ottiche -->
             <div class="p-6 rounded-2xl bg-neutral-100/50 dark:bg-neutral-900/50 border border-neutral-200/80 dark:border-neutral-800/80 space-y-3">
                 <div class="w-8 h-8 rounded-lg bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center text-neutral-700 dark:text-neutral-300">
                     <i class="fa-solid fa-circle-dot text-xs"></i>
@@ -299,8 +277,6 @@
                     <li>Zoom Lens FE 3.5-5.6/28-70mm</li>
                 </ul>
             </div>
-
-            <!-- Stabilizzazione -->
             <div class="p-6 rounded-2xl bg-neutral-100/50 dark:bg-neutral-900/50 border border-neutral-200/80 dark:border-neutral-800/80 space-y-3">
                 <div class="w-8 h-8 rounded-lg bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center text-neutral-700 dark:text-neutral-300">
                     <i class="fa-solid fa-video text-xs"></i>
@@ -311,8 +287,6 @@
                     <li>Gimbal: Ronin DJI Rs 4</li>
                 </ul>
             </div>
-
-            <!-- Software -->
             <div class="p-6 rounded-2xl bg-neutral-100/50 dark:bg-neutral-900/50 border border-neutral-200/80 dark:border-neutral-800/80 space-y-3">
                 <div class="w-8 h-8 rounded-lg bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center text-neutral-700 dark:text-neutral-300">
                     <i class="fa-solid fa-sliders text-xs"></i>
@@ -338,7 +312,6 @@
                     Se desideri collaborare, richiedere informazioni o un preventivo per un servizio fotografico o video, non esitare a scrivermi.
                 </p>
 
-                <!-- Box Scarica CV -->
                 <div class="p-6 rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 space-y-3 shadow-sm">
                     <h4 class="font-medium text-xs sm:text-sm text-neutral-900 dark:text-neutral-100">Curriculum Vitae</h4>
                     <p class="text-xs text-neutral-500 dark:text-neutral-400 font-light">Consulta il mio percorso professionale, le competenze e le passate collaborazioni.</p>
@@ -363,7 +336,6 @@
                 </div>
             </div>
 
-            <!-- Form di Contatto -->
             <div class="md:col-span-7">
                 <form action="https://formspree.io/f/xwlvrjdr" method="POST" class="bg-white dark:bg-neutral-900 p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 space-y-5 shadow-sm">
                     <div>
@@ -387,12 +359,16 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 text-center text-xs text-neutral-400 border-t border-neutral-200 dark:border-neutral-800">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer class="py-10 text-center text-xs text-neutral-400 border-t border-neutral-200 dark:border-neutral-800">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
             <p>&copy; 2026 Giosuè Zuccarello. Tutti i diritti riservati.</p>
-            <div class="flex items-center gap-6">
-                <a href="https://www.instagram.com/jupi_photo/" class="hover:text-neutral-700 dark:hover:text-neutral-200 transition"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@Jupi-photo" class="hover:text-neutral-700 dark:hover:text-neutral-200 transition"><i class="fa-brands fa-youtube"></i></a>
+            <div class="flex items-center gap-8">
+                <a href="https://www.instagram.com/jupi_photo/" target="_blank" rel="noopener noreferrer" class="text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition transform hover:scale-110" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram text-2xl"></i>
+                </a>
+                <a href="https://www.youtube.com/@Jupi-photo" target="_blank" rel="noopener noreferrer" class="text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition transform hover:scale-110" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube text-2xl"></i>
+                </a>
             </div>
         </div>
     </footer>
@@ -411,14 +387,19 @@
 
     <!-- JavaScript -->
     <script>
-        // Toggle Dark Mode
+        // Toggle Dark Mode (Impostato sempre su Light all'apertura se non salvato diversamente)
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const html = document.documentElement;
 
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        // Se l'utente ha salvato esplicitamente 'dark', lo applica, altrimenti parte sempre in modalità chiara
+        if (localStorage.theme === 'dark') {
             html.classList.add('dark');
             themeIcon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            html.classList.remove('dark');
+            localStorage.theme = 'light';
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
         }
 
         themeToggle.addEventListener('click', () => {
@@ -437,7 +418,7 @@
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        // Modale Progetti / Foto (Funzionante per tutte le categorie)
+        // Modale Progetti / Foto
         const modal = document.getElementById('media-modal');
         const modalImg = document.getElementById('modal-img');
         const modalClose = document.getElementById('modal-close');
@@ -497,13 +478,9 @@
             const categories = document.querySelectorAll('.photo-category');
             const catButtons = document.querySelectorAll('.cat-btn');
 
-            // Nasconde tutte le griglie foto
             categories.forEach(cat => cat.classList.add('hidden'));
-
-            // Mostra solo la griglia selezionata
             document.getElementById('cat-' + category).classList.remove('hidden');
 
-            // Aggiorna lo stile dei pulsanti delle categorie
             catButtons.forEach(btn => {
                 btn.classList.remove('bg-neutral-900', 'text-white', 'dark:bg-neutral-100', 'dark:text-neutral-900', 'shadow-sm');
                 btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
