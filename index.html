@@ -95,37 +95,44 @@
             <div class="md:col-span-7 space-y-6">
                 <span class="text-[11px] font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">Fotografo & Videomaker</span>
                 <h1 class="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight text-neutral-900 dark:text-neutral-100">
-                    Ciao! sono Giosuè <span class="italic font-serif"></span> e narrazione visiva.
+                    Ciao, il mio nome è <span class="italic font-serif">Giosuè</span> !
                 </h1>
                 <p class="text-neutral-600 dark:text-neutral-400 font-light text-sm sm:text-base leading-relaxed">
-                    Cerco di raccontare storie attraverso i miei scatti, come fossero tarocchi muti, dove chi guarda può trovare il modo corretto per raccontare o raccontarsi
+                    Sono un fotografo e videomaker specializzato nel trasformare idee, emozioni e brand in storie visive d'impatto. Attraverso l'obiettivo cerco sempre l'equilibrio perfetto tra estetica e narrazione, curando ogni dettaglio: dalla progettazione dello scatto al montaggio finale. Che si tratti di un evento, un progetto editoriale o un contenuto per un brand, il mio obiettivo è creare immagini capaci di catturare l'attenzione e rimanere impresse.
                 <div class="pt-2 flex flex-wrap gap-4">
                     <a href="#projects" class="px-5 py-2.5 bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 rounded-full text-[11px] font-medium uppercase tracking-wider hover:opacity-90 transition">
-                        Vedi i progetti
+                        dai un occhiata ai miei progetti
                     </a>
-                    <a href="#contact" class="px-5 py-2.5 border border-neutral-300 dark:border-neutral-700 rounded-full text-[11px] font-medium uppercase tracking-wider hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 transition">
-                        Scrivimi
-                    </a>
+                    
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 2. Progetti (Fotografia & Video divisi) -->
+    <!-- 2. Progetti (Sezioni Foto & Video Separati con Pulsanti) -->
     <section id="projects" class="py-24 bg-neutral-100/60 dark:bg-neutral-900/40 border-y border-neutral-200/80 dark:border-neutral-800/80">
-        <div class="max-w-6xl mx-auto px-6 space-y-20">
+        <div class="max-w-6xl mx-auto px-6">
             
-            <!-- SUB-SEZIONE 1: FOTOGRAFIA (Giglia Quadrata Stile Feed Instagram) -->
-            <div>
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-                    <div>
-                        <span class="text-[11px] font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">Galleria Fotografica</span>
-                        <h2 class="text-2xl sm:text-3xl font-light tracking-tight text-neutral-900 dark:text-neutral-100 mt-1">Fotografia</h2>
-                    </div>
-                    <p class="text-xs text-neutral-500 dark:text-neutral-400 font-light max-w-sm">Clicca su uno scatto per vederlo a dimensione intera.</p>
+            <!-- Intestazione & Pulsanti Switch -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-[11px] font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">i miei Lavori</span>
+                    <h2 class="text-2xl sm:text-3xl font-light tracking-tight text-neutral-900 dark:text-neutral-100 mt-1">Portfolio</h2>
                 </div>
 
-                <!-- Griglia Instagram Grid 3x3 Quadrata (1:1) -->
+                <!-- Pulsanti di Selezione Sezione -->
+                <div class="flex p-1 rounded-full bg-neutral-200/70 dark:bg-neutral-800/70 border border-neutral-300/50 dark:border-neutral-700/50 w-fit">
+                    <button id="btn-show-photo" onclick="switchSection('photo')" class="px-6 py-2 rounded-full text-xs font-medium bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 shadow-sm transition-all duration-300 flex items-center gap-2">
+                        <i class="fa-solid fa-camera text-[10px]"></i> Foto
+                    </button>
+                    <button id="btn-show-video" onclick="switchSection('video')" class="px-6 py-2 rounded-full text-xs font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-all duration-300 flex items-center gap-2">
+                        <i class="fa-solid fa-video text-[10px]"></i> Video
+                    </button>
+                </div>
+            </div>
+
+            <!-- CONTENUTO 1: SEZIONE FOTOGRAFIA (Instagram Feed Style - Quadrati 1:1) -->
+            <div id="section-photo" class="transition-all duration-500">
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                     
                     <!-- Foto 1 -->
@@ -185,17 +192,8 @@
                 </div>
             </div>
 
-            <!-- SUB-SEZIONE 2: VIDEO (Player YouTube Incorporati) -->
-            <div>
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-                    <div>
-                        <span class="text-[11px] font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">Galleria video</span>
-                        <h2 class="text-2xl sm:text-3xl font-light tracking-tight text-neutral-900 dark:text-neutral-100 mt-1">Video & Showreel</h2>
-                    </div>
-                    <p class="text-xs text-neutral-500 dark:text-neutral-400 font-light max-w-sm">Guarda direttamente su YouTube.</p>
-                </div>
-
-                <!-- Griglia Video (Player YouTube 16:9) -->
+            <!-- CONTENUTO 2: SEZIONE VIDEO (YouTube Player Integrati) - Inizialmente nascosta -->
+            <div id="section-video" class="hidden transition-all duration-500">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     
                     <!-- Video 1 -->
@@ -481,6 +479,37 @@
             contactForm.reset();
             setTimeout(() => formSuccess.classList.add('hidden'), 4000);
         });
+
+        // Funzione per alternare la Sezione Foto e Video
+function switchSection(type) {
+    const sectionPhoto = document.getElementById('section-photo');
+    const sectionVideo = document.getElementById('section-video');
+    const btnPhoto = document.getElementById('btn-show-photo');
+    const btnVideo = document.getElementById('btn-show-video');
+
+    const activeClasses = ['bg-neutral-900', 'text-white', 'dark:bg-neutral-100', 'dark:text-neutral-900', 'shadow-sm'];
+    const inactiveClasses = ['text-neutral-600', 'dark:text-neutral-400'];
+
+    if (type === 'photo') {
+        sectionPhoto.classList.remove('hidden');
+        sectionVideo.classList.add('hidden');
+
+        btnPhoto.classList.add(...activeClasses);
+        btnPhoto.classList.remove(...inactiveClasses);
+
+        btnVideo.classList.remove(...activeClasses);
+        btnVideo.classList.add(...inactiveClasses);
+    } else {
+        sectionVideo.classList.remove('hidden');
+        sectionPhoto.classList.add('hidden');
+
+        btnVideo.classList.add(...activeClasses);
+        btnVideo.classList.remove(...inactiveClasses);
+
+        btnPhoto.classList.remove(...activeClasses);
+        btnPhoto.classList.add(...inactiveClasses);
+    }
+}
     </script>
 </body>
 </html>
