@@ -113,116 +113,115 @@
         </div>
     </section>
 
-    <!-- 2. Progetti (Fotografia e Video) -->
+    <!-- 2. Progetti (Fotografia e Video) - Layout Masonry Dinamico -->
     <section id="projects" class="py-24 bg-neutral-100/60 dark:bg-neutral-900/40 border-y border-neutral-200/80 dark:border-neutral-800/80">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                 <div>
-                    <span class="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">Portfolio</span>
-                    <h2 class="text-2xl sm:text-3xl font-light tracking-tight text-neutral-900 dark:text-neutral-100 mt-1">Lavori Selezionati</h2>
+                    <span class="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">Portfolio Visuale</span>
+                    <h2 class="text-3xl sm:text-4xl font-light tracking-tight text-neutral-900 dark:text-neutral-100 mt-1">Lavori Selezionati</h2>
                 </div>
                 <!-- Filtri -->
                 <div class="flex flex-wrap gap-2" id="filter-buttons">
-                    <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full text-xs font-medium bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 transition">Tutti</button>
-                    <button data-filter="photo" class="filter-btn px-4 py-2 rounded-full text-xs font-medium bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 transition">Fotografie</button>
-                    <button data-filter="video" class="filter-btn px-4 py-2 rounded-full text-xs font-medium bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 transition">Video</button>
+                    <button data-filter="all" class="filter-btn active px-5 py-2.5 rounded-full text-xs font-medium bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 shadow-sm transition-all duration-300">Tutti</button>
+                    <button data-filter="photo" class="filter-btn px-5 py-2.5 rounded-full text-xs font-medium bg-neutral-200/80 dark:bg-neutral-800/80 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-all duration-300">Fotografia</button>
+                    <button data-filter="video" class="filter-btn px-5 py-2.5 rounded-full text-xs font-medium bg-neutral-200/80 dark:bg-neutral-800/80 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-all duration-300">Video & Spot</button>
                 </div>
             </div>
 
-            <!-- Griglia Progetti -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+            <!-- Griglia Dinamica Asimmetrica (Bento / Masonry Style) -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6" id="portfolio-grid">
                 
-                <!-- Progetto 1 (Foto) -->
-                <div class="portfolio-item group cursor-pointer" data-category="photo" data-title="Silenzio Urbano" data-desc="Serie fotografica sull'architettura e le forme geometriche nella luce del primo mattino." data-media="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop">
-                    <div class="aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop" alt="Silenzio Urbano" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                <!-- 1. Video Commerciale Grande (Spazio ampio 8 colonne) -->
+                <div class="portfolio-item md:col-span-8 group cursor-pointer relative overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-category="video" data-title="Commercial Design Spot" data-desc="Spot promozionale dal ritmo fluido e dai toni desaturati per uno studio di architettura." data-media="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop">
+                    <div class="aspect-[16/9] w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop" alt="Short Commercial" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-90 group-hover:opacity-100">
                     </div>
-                    <div class="mt-4 flex items-center justify-between text-xs text-neutral-400">
-                        <span>Fotografia / Architettura</span>
-                        <span>2026</span>
+                    <!-- Badge Video Overlay -->
+                    <div class="absolute top-4 left-4 z-10 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-semibold tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Video 4K
                     </div>
-                    <h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mt-1 group-hover:text-neutral-500 transition">Silenzio Urbano</h3>
+                    <!-- Overlay Contenuto -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-8 text-white opacity-90 group-hover:opacity-100 transition duration-300">
+                        <span class="text-xs text-neutral-300 font-light mb-1">Commercial / Spot</span>
+                        <h3 class="text-xl md:text-2xl font-normal tracking-tight">Design Studio Spot</h3>
+                        <p class="text-xs text-neutral-400 font-light mt-1 max-w-lg line-clamp-1">Direzione della fotografia in luce naturale e montaggio ritmato.</p>
+                    </div>
                 </div>
 
-                <!-- Progetto 2 (Video) -->
-                <div class="portfolio-item group cursor-pointer" data-category="video" data-title="Short Commercial" data-desc="Spot promozionale dal ritmo fluido e dai toni desaturati per studio di design." data-media="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop">
-                    <div class="aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800 relative">
-                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop" alt="Short Commercial" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                        <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-80 group-hover:opacity-100 transition">
-                            <div class="w-10 h-10 rounded-full bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm flex items-center justify-center text-neutral-900 dark:text-neutral-100">
-                                <i class="fa-solid fa-play text-xs ml-0.5"></i>
-                            </div>
-                        </div>
+                <!-- 2. Ritratto Fotografico Verticale (4 colonne) -->
+                <div class="portfolio-item md:col-span-4 group cursor-pointer relative overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-category="photo" data-title="Studio Ritratti" data-desc="Sessione di ritrattistica minimale focalizzata su espressioni naturali e ombre morbide." data-media="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop">
+                    <div class="aspect-[3/4] w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop" alt="Studio Ritratti" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-90 group-hover:opacity-100">
                     </div>
-                    <div class="mt-4 flex items-center justify-between text-xs text-neutral-400">
-                        <span>Video / Commercial</span>
-                        <span>2025</span>
+                    <div class="absolute top-4 left-4 z-10 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-semibold tracking-wider uppercase">
+                        Fotografia
                     </div>
-                    <h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mt-1 group-hover:text-neutral-500 transition">Design Studio Spot</h3>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 text-white transition duration-300">
+                        <span class="text-xs text-neutral-300 font-light mb-1">Ritratto Urbano</span>
+                        <h3 class="text-lg font-normal tracking-tight">Studio Ritratti</h3>
+                    </div>
                 </div>
 
-                <!-- Progetto 3 (Foto) -->
-                <div class="portfolio-item group cursor-pointer" data-category="photo" data-title="Studio Ritratti" data-desc="Sessione di ritrattistica minimale focalizzata su espressioni naturali e ombre morbide." data-media="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop">
-                    <div class="aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop" alt="Studio Ritratti" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                <!-- 3. Foto Architettura (4 colonne) -->
+                <div class="portfolio-item md:col-span-4 group cursor-pointer relative overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-category="photo" data-title="Silenzio Urbano" data-desc="Serie fotografica sull'architettura e le forme geometriche nella luce del primo mattino." data-media="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop">
+                    <div class="aspect-[4/3] w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop" alt="Silenzio Urbano" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-90 group-hover:opacity-100">
                     </div>
-                    <div class="mt-4 flex items-center justify-between text-xs text-neutral-400">
-                        <span>Fotografia / Ritratti</span>
-                        <span>2025</span>
+                    <div class="absolute top-4 left-4 z-10 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-semibold tracking-wider uppercase">
+                        Fotografia
                     </div>
-                    <h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mt-1 group-hover:text-neutral-500 transition">Studio Ritratti</h3>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 text-white transition duration-300">
+                        <span class="text-xs text-neutral-300 font-light mb-1">Architettura</span>
+                        <h3 class="text-lg font-normal tracking-tight">Silenzio Urbano</h3>
+                    </div>
                 </div>
 
-                <!-- Progetto 4 (Video) -->
-                <div class="portfolio-item group cursor-pointer" data-category="video" data-title="Documentario Breve" data-desc="Mini doc sulla lavorazione artigianale con riprese dettagliate e audio ambiente curato." data-media="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop">
-                    <div class="aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800 relative">
-                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" alt="Documentario Breve" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                        <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-80 group-hover:opacity-100 transition">
-                            <div class="w-10 h-10 rounded-full bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm flex items-center justify-center text-neutral-900 dark:text-neutral-100">
-                                <i class="fa-solid fa-play text-xs ml-0.5"></i>
-                            </div>
-                        </div>
+                <!-- 4. Video Documentario (8 colonne) -->
+                <div class="portfolio-item md:col-span-8 group cursor-pointer relative overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-category="video" data-title="Mani e Materia" data-desc="Mini doc sulla lavorazione artigianale con riprese dettagliate e audio ambiente curato." data-media="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop">
+                    <div class="aspect-[16/9] w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" alt="Documentario" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-90 group-hover:opacity-100">
                     </div>
-                    <div class="mt-4 flex items-center justify-between text-xs text-neutral-400">
-                        <span>Video / Doc</span>
-                        <span>2025</span>
+                    <div class="absolute top-4 left-4 z-10 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-semibold tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Video Doc
                     </div>
-                    <h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mt-1 group-hover:text-neutral-500 transition">Mani e Materia</h3>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-8 text-white transition duration-300">
+                        <span class="text-xs text-neutral-300 font-light mb-1">Documentario Breve</span>
+                        <h3 class="text-xl md:text-2xl font-normal tracking-tight">Mani e Materia</h3>
+                    </div>
                 </div>
 
-                <!-- Progetto 5 (Foto) -->
-                <div class="portfolio-item group cursor-pointer" data-category="photo" data-title="Luce Naturale" data-desc="Reportage di viaggio tra paesaggi vulcanici ed elementi naturali." data-media="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
-                    <div class="aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800">
-                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Luce Naturale" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                <!-- 5. Foto Paesaggio Grande (6 colonne) -->
+                <div class="portfolio-item md:col-span-6 group cursor-pointer relative overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-category="photo" data-title="Terre d'Islanda" data-desc="Reportage di viaggio tra paesaggi vulcanici ed elementi naturali desaturati." data-media="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
+                    <div class="aspect-[16/10] w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Islanda" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-90 group-hover:opacity-100">
                     </div>
-                    <div class="mt-4 flex items-center justify-between text-xs text-neutral-400">
-                        <span>Fotografia / Paesaggio</span>
-                        <span>2024</span>
+                    <div class="absolute top-4 left-4 z-10 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-semibold tracking-wider uppercase">
+                        Fotografia
                     </div>
-                    <h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mt-1 group-hover:text-neutral-500 transition">Terre d'Islanda</h3>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 text-white transition duration-300">
+                        <span class="text-xs text-neutral-300 font-light mb-1">Paesaggio</span>
+                        <h3 class="text-lg font-normal tracking-tight">Terre d'Islanda</h3>
+                    </div>
                 </div>
 
-                <!-- Progetto 6 (Video) -->
-                <div class="portfolio-item group cursor-pointer" data-category="video" data-title="Event Recap" data-desc="Sintesi dinamica ma elegante di un evento culturale e mostra d'arte." data-media="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop">
-                    <div class="aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800 relative">
-                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop" alt="Event Recap" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                        <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-80 group-hover:opacity-100 transition">
-                            <div class="w-10 h-10 rounded-full bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm flex items-center justify-center text-neutral-900 dark:text-neutral-100">
-                                <i class="fa-solid fa-play text-xs ml-0.5"></i>
-                            </div>
-                        </div>
+                <!-- 6. Video Evento (6 colonne) -->
+                <div class="portfolio-item md:col-span-6 group cursor-pointer relative overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-category="video" data-title="Art Exhibition Aftermovie" data-desc="Sintesi dinamica ma elegante di un evento culturale e mostra d'arte." data-media="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop">
+                    <div class="aspect-[16/10] w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop" alt="Event" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-90 group-hover:opacity-100">
                     </div>
-                    <div class="mt-4 flex items-center justify-between text-xs text-neutral-400">
-                        <span>Video / Eventi</span>
-                        <span>2024</span>
+                    <div class="absolute top-4 left-4 z-10 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-semibold tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Video Evento
                     </div>
-                    <h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mt-1 group-hover:text-neutral-500 transition">Art Exhibition Aftermovie</h3>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 text-white transition duration-300">
+                        <span class="text-xs text-neutral-300 font-light mb-1">Eventi Culturali</span>
+                        <h3 class="text-lg font-normal tracking-tight">Art Exhibition Aftermovie</h3>
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
-
     <!-- 3. Sezione Attrezzatura (Gear) -->
     <section id="gear" class="py-24 max-w-6xl mx-auto px-6">
         <div class="max-w-xl mb-16">
