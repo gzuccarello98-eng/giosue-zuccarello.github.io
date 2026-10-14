@@ -83,9 +83,10 @@
         </div>
     </header>
 
-    <!-- 1. Presentazione Iniziale / Hero -->
+    <!-- 1. Presentazione Iniziale / Hero (Sfondo pulito) -->
     <section id="about" class="pt-32 pb-20 md:pt-40 md:pb-28 max-w-5xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <!-- Immagine Rotonda -->
             <div class="md:col-span-5 flex justify-center">
                 <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden bg-neutral-200 dark:bg-neutral-800 shadow-md border-2 border-neutral-200 dark:border-neutral-800 flex-shrink-0">
                     <img src="profilo.jpg" alt="Giosuè Zuccarello" class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-700">
@@ -93,18 +94,20 @@
             </div>
             <div class="md:col-span-7 space-y-6">
                 <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-neutral-900 dark:bg-neutral-100"></span>
+                    
                     <span class="text-[11px] font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">Fotografo & Videomaker</span>
                 </div>
                 <h1 class="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight text-neutral-900 dark:text-neutral-100">
                     Ciao, il mio nome è <span class="italic font-serif">Giosuè</span> !
                 </h1>
                 <p class="text-neutral-600 dark:text-neutral-400 font-light text-sm sm:text-base leading-relaxed">
-                    Ho conseguito la Laurea in DAMS (curriculum Informatica e produzioni digitali) presso l’Università
+                    Ho conseguito la Laurea in DAMS (curriculum Informatica e produzioni digitali) <br> presso l’Università
                     degli Studi di Torino e completato un percorso in Creative Writing e Storytelling con la Wesleyan
                     University.<br>
-                    La mia preparazione unisce una profonda sensibilità narrativa alla padronanza delle tecnologie digitali e dei software di montaggio e post-produzione.
+                    La mia preparazione unisce una profonda sensibilità narrativa (ed è mia volontà ampliarne la conoscenza nelle sue
+                    varie forme e declinazioni) alla padronanza delle tecnologie digitali e dei software di montaggio e post-produzione.
                 </p>
+                
                 <div class="pt-2 flex flex-wrap gap-4">
                     <a href="#projects" class="px-5 py-2.5 bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 rounded-full text-[11px] font-medium uppercase tracking-wider hover:opacity-90 transition shadow-sm">
                         dai un'occhiata ai miei progetti
@@ -114,18 +117,18 @@
         </div>
     </section>
 
-    <!-- 2. Progetti -->
-    <section id="projects" class="py-24 bg-neutral-200 dark:bg-neutral-900 border-y border-neutral-200/80 dark:border-neutral-800/80">
+    <!-- 2. Progetti (Sfondo con grigio più scuro e marcato) -->
+    <section id="projects" class="py-24 bg-neutral-200 dark:bg-neutral-900 border-y border-neutral-300 dark:border-neutral-800">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
                 <div>
                     <div class="flex items-center gap-2 mb-1">
-                        <span class="w-2 h-2 rounded-full bg-neutral-900 dark:bg-neutral-100"></span>
-                        <span class="text-[11px] font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">I miei lavori</span>
+                        
+                        <span class="text-[11px] font-semibold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">I miei lavori</span>
                     </div>
                     <h2 class="text-2xl sm:text-3xl font-light tracking-tight text-neutral-900 dark:text-neutral-100">Portfolio</h2>
                 </div>
-                <div class="flex p-1 rounded-full bg-neutral-200/70 dark:bg-neutral-800/70 border border-neutral-300/50 dark:border-neutral-700/50 w-fit">
+                <div class="flex p-1 rounded-full bg-neutral-300/80 dark:bg-neutral-800/80 border border-neutral-300 dark:border-neutral-700 w-fit">
                     <button id="btn-show-photo" onclick="switchMainTab('photo')" class="px-6 py-2 rounded-full text-xs font-medium bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 shadow-sm transition-all duration-300 flex items-center gap-2">
                         <i class="fa-solid fa-camera text-[10px]"></i> Foto
                     </button>
@@ -137,77 +140,77 @@
 
             <!-- CONTENUTO PRINCIPALE FOTO -->
             <div id="section-photo" class="space-y-8 transition-all duration-500">
-                <div class="flex flex-nowrap overflow-x-auto justify-between sm:justify-start gap-1 sm:gap-2 border-b border-neutral-200 dark:border-neutral-800 pb-4">
+                <div class="flex flex-nowrap overflow-x-auto justify-between sm:justify-start gap-1 sm:gap-2 border-b border-neutral-300 dark:border-neutral-800 pb-4">
                     <button onclick="switchPhotoCategory('portraits')" id="btn-cat-portraits" class="cat-btn px-2.5 sm:px-4 py-1.5 rounded-lg text-[11px] sm:text-xs font-medium whitespace-nowrap bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 transition shadow-sm">
                         Ritratti
                     </button>
-                    <button onclick="switchPhotoCategory('street')" id="btn-cat-street" class="cat-btn px-2.5 sm:px-4 py-1.5 rounded-lg text-[11px] sm:text-xs font-medium whitespace-nowrap text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition">
+                    <button onclick="switchPhotoCategory('street')" id="btn-cat-street" class="cat-btn px-2.5 sm:px-4 py-1.5 rounded-lg text-[11px] sm:text-xs font-medium whitespace-nowrap text-neutral-700 dark:text-neutral-400 hover:bg-neutral-300 dark:hover:bg-neutral-800 transition">
                         Street Photography
                     </button>
-                    <button onclick="switchPhotoCategory('events')" id="btn-cat-events" class="cat-btn px-2.5 sm:px-4 py-1.5 rounded-lg text-[11px] sm:text-xs font-medium whitespace-nowrap text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition">
+                    <button onclick="switchPhotoCategory('events')" id="btn-cat-events" class="cat-btn px-2.5 sm:px-4 py-1.5 rounded-lg text-[11px] sm:text-xs font-medium whitespace-nowrap text-neutral-700 dark:text-neutral-400 hover:bg-neutral-300 dark:hover:bg-neutral-800 transition">
                         Eventi e Spettacoli
                     </button>
                 </div>
 
                 <div id="cat-portraits" class="photo-category grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="a.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="a.jpg">
                         <img src="a.jpg" alt="Ritratto 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="b.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="b.jpg">
                         <img src="b.jpg" alt="Ritratto 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="c.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="c.jpg">
                         <img src="c.jpg" alt="Ritratto 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="d.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="d.jpg">
                         <img src="d.jpg" alt="Ritratto 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="e.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="e.jpg">
                         <img src="e.jpg" alt="Ritratto 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="f.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="f.jpg">
                         <img src="f.jpg" alt="Ritratto 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
                 </div>
 
                 <div id="cat-street" class="photo-category hidden grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="g.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="g.jpg">
                         <img src="g.jpg" alt="Street 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="h.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="h.jpg">
                         <img src="h.jpg" alt="Street 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="i.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="i.jpg">
                         <img src="i.jpg" alt="Street 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="l.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="l.jpg">
                         <img src="l.jpg" alt="Street 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="m.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="m.jpg">
                         <img src="m.jpg" alt="Street 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="n.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="n.jpg">
                         <img src="n.jpg" alt="Street 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
                 </div>
 
                 <div id="cat-events" class="photo-category hidden grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="o.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="o.jpg">
                         <img src="o.jpg" alt="Spettacolo 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="o.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="o.jpg">
                         <img src="o.jpg" alt="Spettacolo 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="o.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="o.jpg">
                         <img src="o.jpg" alt="Spettacolo 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="o.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="o.jpg">
                         <img src="o.jpg" alt="Spettacolo 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="o.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="o.jpg">
                         <img src="o.jpg" alt="Spettacolo 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
-                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm" data-media="o.jpg">
+                    <div class="portfolio-item group cursor-pointer relative aspect-square overflow-hidden rounded-xl bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm" data-media="o.jpg">
                         <img src="o.jpg" alt="Spettacolo 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95 group-hover:opacity-100">
                     </div>
                 </div>
@@ -215,18 +218,21 @@
 
             <!-- CONTENUTO PRINCIPALE VIDEO -->
             <div id="section-video" class="hidden space-y-8 transition-all duration-500">
-                <div class="flex flex-wrap gap-2 border-b border-neutral-200 dark:border-neutral-800 pb-4">
+                <!-- Sotto-categorie Video -->
+                <div class="flex flex-wrap gap-2 border-b border-neutral-300 dark:border-neutral-800 pb-4">
                     <button onclick="switchVideoCategory('horizontal')" id="btn-vid-horizontal" class="vid-btn px-4 py-1.5 rounded-lg text-xs font-medium bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 transition shadow-sm">
                         Formato Orizzontale
                     </button>
-                    <button onclick="switchVideoCategory('vertical')" id="btn-vid-vertical" class="vid-btn px-4 py-1.5 rounded-lg text-xs font-medium text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition">
+                    <button onclick="switchVideoCategory('vertical')" id="btn-vid-vertical" class="vid-btn px-4 py-1.5 rounded-lg text-xs font-medium text-neutral-700 dark:text-neutral-400 hover:bg-neutral-300 dark:hover:bg-neutral-800 transition">
                         Formato Verticale
                     </button>
                 </div>
 
+                <!-- Categoria: Formato Orizzontale -->
                 <div id="vid-horizontal" class="video-category grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Video 1 -->
                     <div class="space-y-3">
-                        <div class="video-container aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="43ykpd6cHZs">
+                        <div class="video-container aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="43ykpd6cHZs">
                             <img src="https://img.youtube.com/vi/43ykpd6cHZs/maxresdefault.jpg" alt="Fuori controllo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/10 transition flex items-center justify-center">
                                 <div class="w-14 h-14 rounded-full bg-neutral-900/80 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
@@ -236,11 +242,12 @@
                         </div>
                         <div class="flex items-center justify-between text-xs">
                             <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>FUORI CONTROLLO</strong></h3>
-                            <span class="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-200 dark:border-neutral-800 px-2 py-0.5 rounded-full">Cortometraggio</span>
+                            <span class="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wider border border-neutral-300 dark:border-neutral-800 px-2 py-0.5 rounded-full">Cortometraggio</span>
                         </div>
                     </div>
+                    <!-- Video 2 -->
                     <div class="space-y-3">
-                        <div class="video-container aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="uUR31XiIr4Y">
+                        <div class="video-container aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="uUR31XiIr4Y">
                             <img src="https://img.youtube.com/vi/uUR31XiIr4Y/maxresdefault.jpg" alt="Pleasure" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/10 transition flex items-center justify-center">
                                 <div class="w-14 h-14 rounded-full bg-neutral-900/80 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
@@ -250,11 +257,12 @@
                         </div>
                         <div class="flex items-center justify-between text-xs">
                             <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>Pleasure</strong></h3>
-                            <span class="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-200 dark:border-neutral-800 px-2 py-0.5 rounded-full">Fashion-film</span>
+                            <span class="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wider border border-neutral-300 dark:border-neutral-800 px-2 py-0.5 rounded-full">Fashion-film</span>
                         </div>
                     </div>
+                    <!-- Video 3 -->
                     <div class="space-y-3">
-                        <div class="video-container aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="istmXarvRvA">
+                        <div class="video-container aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="istmXarvRvA">
                             <img src="https://img.youtube.com/vi/istmXarvRvA/maxresdefault.jpg" alt="Vinted" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/10 transition flex items-center justify-center">
                                 <div class="w-14 h-14 rounded-full bg-neutral-900/80 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
@@ -264,11 +272,12 @@
                         </div>
                         <div class="flex items-center justify-between text-xs">
                             <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>Vint&d</strong></h3>
-                            <span class="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-200 dark:border-neutral-800 px-2 py-0.5 rounded-full">Pubblicità</span>
+                            <span class="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wider border border-neutral-300 dark:border-neutral-800 px-2 py-0.5 rounded-full">Pubblicità</span>
                         </div>
                     </div>
+                    <!-- Video 4 -->
                     <div class="space-y-3">
-                        <div class="video-container aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="PdbWiaICitM">
+                        <div class="video-container aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="PdbWiaICitM">
                             <img src="https://img.youtube.com/vi/PdbWiaICitM/maxresdefault.jpg" alt="DLMG" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/10 transition flex items-center justify-center">
                                 <div class="w-14 h-14 rounded-full bg-neutral-900/80 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
@@ -278,14 +287,16 @@
                         </div>
                         <div class="flex items-center justify-between text-xs">
                             <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>DLMG</strong></h3>
-                            <span class="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-200 dark:border-neutral-800 px-2 py-0.5 rounded-full">VideoClip</span>
+                            <span class="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wider border border-neutral-300 dark:border-neutral-800 px-2 py-0.5 rounded-full">VideoClip</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- Categoria: Formato Verticale -->
                 <div id="vid-vertical" class="video-category hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <!-- Verticale 1 -->
                     <div class="space-y-3 max-w-xs mx-auto w-full">
-                        <div class="video-container aspect-[9/16] w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="l9jiaVhtKnw">
+                        <div class="video-container aspect-[9/16] w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="l9jiaVhtKnw">
                             <img src="https://img.youtube.com/vi/l9jiaVhtKnw/maxresdefault.jpg" alt="Verticale 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/10 transition flex items-center justify-center">
                                 <div class="w-12 h-12 rounded-full bg-neutral-900/80 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
@@ -295,11 +306,12 @@
                         </div>
                         <div class="flex items-center justify-between text-xs">
                             <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>Accademia del Panino</strong></h3>
-                            <span class="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-200 dark:border-neutral-800 px-2 py-0.5 rounded-full">Pubblicità Social</span>
+                            <span class="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wider border border-neutral-300 dark:border-neutral-800 px-2 py-0.5 rounded-full">Pubblicità Social</span>
                         </div>
                     </div>
+                    <!-- Verticale 2 -->
                     <div class="space-y-3 max-w-xs mx-auto w-full">
-                        <div class="video-container aspect-[9/16] w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="uUR31XiIr4Y">
+                        <div class="video-container aspect-[9/16] w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="uUR31XiIr4Y">
                             <img src="https://img.youtube.com/vi/uUR31XiIr4Y/maxresdefault.jpg" alt="Verticale 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/10 transition flex items-center justify-center">
                                 <div class="w-12 h-12 rounded-full bg-neutral-900/80 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
@@ -309,11 +321,12 @@
                         </div>
                         <div class="flex items-center justify-between text-xs">
                             <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>Reel / Short 2</strong></h3>
-                            <span class="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-200 dark:border-neutral-800 px-2 py-0.5 rounded-full">Verticale</span>
+                            <span class="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wider border border-neutral-300 dark:border-neutral-800 px-2 py-0.5 rounded-full">Verticale</span>
                         </div>
                     </div>
+                    <!-- Verticale 3 -->
                     <div class="space-y-3 max-w-xs mx-auto w-full">
-                        <div class="video-container aspect-[9/16] w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="istmXarvRvA">
+                        <div class="video-container aspect-[9/16] w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="istmXarvRvA">
                             <img src="https://img.youtube.com/vi/istmXarvRvA/maxresdefault.jpg" alt="Verticale 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/10 transition flex items-center justify-center">
                                 <div class="w-12 h-12 rounded-full bg-neutral-900/80 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
@@ -323,7 +336,7 @@
                         </div>
                         <div class="flex items-center justify-between text-xs">
                             <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>Reel / Short 3</strong></h3>
-                            <span class="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-200 dark:border-neutral-800 px-2 py-0.5 rounded-full">Verticale</span>
+                            <span class="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wider border border-neutral-300 dark:border-neutral-800 px-2 py-0.5 rounded-full">Verticale</span>
                         </div>
                     </div>
                 </div>
@@ -331,11 +344,11 @@
         </div>
     </section>
 
-    <!-- 3. Sezione Attrezzatura (Gear) -->
+    <!-- 3. Sezione Attrezzatura (Gear) (Sfondo pulito con card rifinite ed effetto hover marcato) -->
     <section id="gear" class="py-24 max-w-6xl mx-auto px-6">
         <div class="max-w-xl mb-16">
             <div class="flex items-center gap-2 mb-1">
-                <span class="w-2 h-2 rounded-full bg-neutral-900 dark:bg-neutral-100"></span>
+                
                 <span class="text-[11px] font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">Strumenti del mestiere</span>
             </div>
             <h2 class="text-2xl sm:text-3xl font-light tracking-tight text-neutral-900 dark:text-neutral-100">La Mia Attrezzatura</h2>
@@ -385,13 +398,12 @@
         </div>
     </section>
 
-    <!-- 4. Contatti & Download Curriculum (3 Box disposti in modo ordinato e simmetrico) -->
+     <!-- 4. Contatti & Download Curriculum (3 Box disposti in modo ordinato e simmetrico) -->
     <section id="contact" class="py-24 bg-neutral-200 dark:bg-neutral-900 border-t border-neutral-200/80 dark:border-neutral-800/80">
         <div class="max-w-6xl mx-auto px-6 space-y-12">
             <!-- Testo Introduttivo -->
             <div class="max-w-2xl">
                 <div class="flex items-center gap-2 mb-1">
-                    <span class="w-2 h-2 rounded-full bg-neutral-900 dark:bg-neutral-100"></span>
                     <span class="text-[11px] font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">Contatti</span>
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-light tracking-tight text-neutral-900 dark:text-neutral-100 mb-3">Parliamo del tuo progetto</h2>
@@ -502,6 +514,7 @@
 
     <!-- JavaScript -->
     <script>
+        // Toggle Dark Mode
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const html = document.documentElement;
@@ -526,10 +539,12 @@
             }
         });
 
+        // Mobile Menu
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
+        // Modale Progetti / Foto
         const modal = document.getElementById('media-modal');
         const modalImg = document.getElementById('modal-img');
         const modalClose = document.getElementById('modal-close');
@@ -553,6 +568,7 @@
             }
         });
 
+        // Caricamento dinamico dei video HD al click sull'anteprima
         const videoContainers = document.querySelectorAll('.video-container');
         videoContainers.forEach(container => {
             container.addEventListener('click', () => {
@@ -570,6 +586,7 @@
             });
         });
 
+        // Funzione per alternare la macro-sezione Foto e Video
         function switchMainTab(type) {
             const sectionPhoto = document.getElementById('section-photo');
             const sectionVideo = document.getElementById('section-video');
@@ -600,6 +617,7 @@
             }
         }
 
+        // Funzione per alternare le sotto-categorie fotografiche
         function switchPhotoCategory(category) {
             const categories = document.querySelectorAll('.photo-category');
             const catButtons = document.querySelectorAll('.cat-btn');
@@ -609,14 +627,15 @@
 
             catButtons.forEach(btn => {
                 btn.classList.remove('bg-neutral-900', 'text-white', 'dark:bg-neutral-100', 'dark:text-neutral-900', 'shadow-sm');
-                btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+                btn.classList.add('text-neutral-700', 'dark:text-neutral-400');
             });
 
             const activeBtn = document.getElementById('btn-cat-' + category);
             activeBtn.classList.add('bg-neutral-900', 'text-white', 'dark:bg-neutral-100', 'dark:text-neutral-900', 'shadow-sm');
-            activeBtn.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+            activeBtn.classList.remove('text-neutral-700', 'dark:text-neutral-400');
         }
 
+        // Funzione per alternare le sotto-categorie video (Orizzontale / Verticale)
         function switchVideoCategory(category) {
             const categories = document.querySelectorAll('.video-category');
             const vidButtons = document.querySelectorAll('.vid-btn');
@@ -626,12 +645,12 @@
 
             vidButtons.forEach(btn => {
                 btn.classList.remove('bg-neutral-900', 'text-white', 'dark:bg-neutral-100', 'dark:text-neutral-900', 'shadow-sm');
-                btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+                btn.classList.add('text-neutral-700', 'dark:text-neutral-400');
             });
 
             const activeBtn = document.getElementById('btn-vid-' + category);
             activeBtn.classList.add('bg-neutral-900', 'text-white', 'dark:bg-neutral-100', 'dark:text-neutral-900', 'shadow-sm');
-            activeBtn.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+            activeBtn.classList.remove('text-neutral-700', 'dark:text-neutral-400');
         }
     </script>
 </body>
