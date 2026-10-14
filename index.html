@@ -12,11 +12,22 @@
             theme: {
                 extend: {
                     colors: {
-                        dark: {
-                            DEFAULT: '#0a0a0a',
-                            surface: '#121212',
-                            card: '#1a1a1a',
-                            border: '#2a2a2a'
+                        neutral: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            300: '#d6d3d1',
+                            400: '#a8a29e',
+                            500: '#78716c',
+                            600: '#57534e',
+                            700: '#44403c',
+                            800: '#292524',
+                            900: '#1c1917',
+                            950: '#0c0a09',
+                        },
+                        sand: {
+                            DEFAULT: '#e6e2dd',
+                            dark: '#262422'
                         }
                     }
                 }
@@ -26,459 +37,344 @@
     <!-- Font Awesome per le icone -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass { background: rgba(18, 18, 18, 0.7); backdrop-filter: blur(12px); }
-        .glass-light { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
     </style>
 </head>
-<body class="bg-white text-gray-900 dark:bg-dark dark:text-gray-100 transition-colors duration-300">
+<body class="bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-200 transition-colors duration-300">
 
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 right-0 z-50 glass dark:glass border-b border-gray-200 dark:border-dark-border transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="text-xl font-extrabold tracking-wider uppercase flex items-center gap-2">
-                <i class="fa-solid fa-camera-retro text-amber-500"></i>
-                <span>[Tuo Nome] <span class="text-amber-500 font-light">Visuals</span></span>
+    <!-- Header / Navigazione -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-neutral-50/80 dark:bg-neutral-950/80 backdrop-blur-md border-b border-neutral-200/60 dark:border-neutral-800/60 transition-colors">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-lg font-medium tracking-widest uppercase text-neutral-900 dark:text-neutral-100">
+                [Tuo Nome] <span class="text-neutral-400 font-light">Visuals</span>
             </a>
 
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
-                <a href="#portfolio" class="hover:text-amber-500 transition">Portfolio</a>
-                <a href="#services" class="hover:text-amber-500 transition">Servizi</a>
-                <a href="#gear" class="hover:text-amber-500 transition">Attrezzatura</a>
-                <a href="#about" class="hover:text-amber-500 transition">Bio</a>
-                <a href="#contact" class="hover:text-amber-500 transition">Contatti</a>
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-600 dark:text-neutral-400">
+                <a href="#about" class="hover:text-neutral-900 dark:hover:text-neutral-100 transition">Chi Sono</a>
+                <a href="#projects" class="hover:text-neutral-900 dark:hover:text-neutral-100 transition">Progetti</a>
+                <a href="#gear" class="hover:text-neutral-900 dark:hover:text-neutral-100 transition">Attrezzatura</a>
+                <a href="#contact" class="hover:text-neutral-900 dark:hover:text-neutral-100 transition">Contatti</a>
             </nav>
 
             <div class="flex items-center gap-4">
                 <!-- Theme Toggle Button -->
-                <button id="theme-toggle" class="p-2.5 rounded-full bg-gray-100 dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-dark-border transition text-gray-700 dark:text-yellow-400">
-                    <i id="theme-icon" class="fa-solid fa-moon text-lg"></i>
+                <button id="theme-toggle" aria-label="Cambia tema" class="p-2 rounded-full text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 transition">
+                    <i id="theme-icon" class="fa-solid fa-moon text-base"></i>
                 </button>
-                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-black dark:text-white bg-amber-500 hover:bg-amber-400 rounded-full transition shadow-lg shadow-amber-500/20">
-                    Richiedi Preventivo
+                <a href="curriculum.pdf" download class="hidden sm:inline-flex items-center gap-2 px-4 py-2 border border-neutral-300 dark:border-neutral-700 rounded-full text-xs font-medium uppercase tracking-wider hover:bg-neutral-900 hover:text-white dark:hover:bg-neutral-100 dark:hover:text-neutral-900 transition duration-300">
+                    <i class="fa-solid fa-download text-xs"></i> Scarica CV
                 </a>
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2.5 text-gray-700 dark:text-gray-200">
-                    <i class="fa-solid fa-bars text-xl"></i>
+                <button id="mobile-menu-btn" aria-label="Menu" class="md:hidden p-2 text-neutral-700 dark:text-neutral-300">
+                    <i class="fa-solid fa-bars text-lg"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-surface border-b border-gray-200 dark:border-dark-border px-6 py-4 space-y-4">
-            <a href="#portfolio" class="block text-lg font-medium hover:text-amber-500">Portfolio</a>
-            <a href="#services" class="block text-lg font-medium hover:text-amber-500">Servizi</a>
-            <a href="#gear" class="block text-lg font-medium hover:text-amber-500">Attrezzatura</a>
-            <a href="#about" class="block text-lg font-medium hover:text-amber-500">Bio</a>
-            <a href="#contact" class="block text-lg font-medium hover:text-amber-500">Contatti</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 px-6 py-6 space-y-4 text-center">
+            <a href="#about" class="block text-base font-medium text-neutral-700 dark:text-neutral-300">Chi Sono</a>
+            <a href="#projects" class="block text-base font-medium text-neutral-700 dark:text-neutral-300">Progetti</a>
+            <a href="#gear" class="block text-base font-medium text-neutral-700 dark:text-neutral-300">Attrezzatura</a>
+            <a href="#contact" class="block text-base font-medium text-neutral-700 dark:text-neutral-300">Contatti</a>
+            <a href="curriculum.pdf" download class="inline-flex items-center gap-2 px-5 py-2.5 mt-2 border border-neutral-300 dark:border-neutral-700 rounded-full text-xs font-medium uppercase tracking-wider">
+                <i class="fa-solid fa-download"></i> Scarica CV
+            </a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gray-950 text-white">
-        <!-- Background Immagine / Video Overlay -->
-        <div class="absolute inset-0 z-0 opacity-40">
-            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1920&auto=format&fit=crop" alt="Cinematic Background" class="w-full h-full object-cover">
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/50 to-transparent z-0"></div>
-
-        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center space-y-8">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-semibold tracking-wide uppercase">
-                <i class="fa-solid fa-clapperboard"></i> Director of Photography & Photographer
-            </div>
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-none">
-                Racconto storie attraverso <span class="text-amber-400 underline decoration-amber-500/50">luce e movimento</span>.
-            </h1>
-            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-gray-300 font-light">
-                Produzioni video cinematografiche, spot commerciali, servizi fotografici di ritratto e reportage di eventi con uno sguardo unico e ricercato.
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full transition shadow-xl shadow-amber-500/20 flex items-center justify-center gap-2">
-                    <span>Esplora i Lavori</span>
-                    <i class="fa-solid fa-arrow-down"></i>
-                </a>
-                <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold rounded-full transition backdrop-blur-md">
-                    Parliamo del tuo progetto
-                </a>
-            </div>
-        </div>
-
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce hidden sm:block text-white/60">
-            <i class="fa-solid fa-chevron-down text-xl"></i>
-        </div>
-    </section>
-
-    <!-- Portfolio Gallery Section -->
-    <section id="portfolio" class="py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div>
-                <span class="text-amber-500 font-semibold tracking-widest text-sm uppercase">Selected Works</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mt-2">Galleria Multimediale</h2>
-            </div>
-            <!-- Filtri -->
-            <div class="flex flex-wrap gap-2" id="filter-buttons">
-                <button data-filter="all" class="filter-btn active px-5 py-2.5 rounded-full text-sm font-semibold bg-amber-500 text-black transition">Tutti</button>
-                <button data-filter="video" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-gray-100 dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-dark-border transition">Video / Spot</button>
-                <button data-filter="photo" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-gray-100 dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-dark-border transition">Fotografia</button>
-                <button data-filter="wedding" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-gray-100 dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-dark-border transition">Wedding</button>
-            </div>
-        </div>
-
-        <!-- Griglia Progetti -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
-            
-            <!-- Progetto 1 (Video) -->
-            <div class="portfolio-item group relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-dark-card border border-gray-200 dark:border-dark-border cursor-pointer shadow-lg" data-category="video" data-title="Commercial Fashion Spot" data-desc="Spot pubblicitario 4K girato con RED Komodo e ottiche anamorfiche per brand di abbigliamento." data-media="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop" data-type="image">
-                <div class="aspect-[16/10] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop" alt="Fashion Spot" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6 text-white">
-                    <span class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1"><i class="fa-solid fa-video mr-1"></i> Video / Commercial</span>
-                    <h3 class="text-xl font-bold">Fashion Commercial 4K</h3>
-                    <p class="text-sm text-gray-300 mt-1 line-clamp-2">Direzione della fotografia e color grading avanzato in DaVinci Resolve.</p>
-                </div>
-                <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                    <i class="fa-solid fa-expand text-sm"></i>
+    <!-- 1. Presentazione Iniziale / Hero -->
+    <section id="about" class="pt-36 pb-24 md:pt-48 md:pb-32 max-w-5xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5">
+                <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 shadow-sm border border-neutral-200 dark:border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop" alt="Foto di presentazione" class="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 transition duration-700">
                 </div>
             </div>
-
-            <!-- Progetto 2 (Photo) -->
-            <div class="portfolio-item group relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-dark-card border border-gray-200 dark:border-dark-border cursor-pointer shadow-lg" data-category="photo" data-title="Urban Portrait Session" data-desc="Servizio di ritratto urbano in ambiente industriale con illuminazione naturale e stroboscopica." data-media="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop" data-type="image">
-                <div class="aspect-[16/10] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop" alt="Portrait" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6 text-white">
-                    <span class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1"><i class="fa-solid fa-camera mr-1"></i> Fotografia / Ritratti</span>
-                    <h3 class="text-xl font-bold">Urban Portraiture</h3>
-                    <p class="text-sm text-gray-300 mt-1 line-clamp-2">Scatti in luce mista urbana e post-produzione cromatica personalizzata.</p>
-                </div>
-                <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                    <i class="fa-solid fa-expand text-sm"></i>
-                </div>
-            </div>
-
-            <!-- Progetto 3 (Wedding) -->
-            <div class="portfolio-item group relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-dark-card border border-gray-200 dark:border-dark-border cursor-pointer shadow-lg" data-category="wedding" data-title="Elegance Wedding Story" data-desc="Reportage di matrimonio cinematografico e servizi fotografici completi in villa storica." data-media="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" data-type="image">
-                <div class="aspect-[16/10] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Wedding" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6 text-white">
-                    <span class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1"><i class="fa-solid fa-ring mr-1"></i> Wedding / Story</span>
-                    <h3 class="text-xl font-bold">Elegance Wedding Story</h3>
-                    <p class="text-sm text-gray-300 mt-1 line-clamp-2">Emozioni spontanee catturate con discrezione e stile cinematografico.</p>
-                </div>
-                <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                    <i class="fa-solid fa-expand text-sm"></i>
-                </div>
-            </div>
-
-            <!-- Progetto 4 (Video) -->
-            <div class="portfolio-item group relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-dark-card border border-gray-200 dark:border-dark-border cursor-pointer shadow-lg" data-category="video" data-title="Music Video Cinematic" data-desc="Videoclip musicale girato in notturna con effetti di luce dinamici e stabilizzazione aerea." data-media="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" data-type="image">
-                <div class="aspect-[16/10] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" alt="Music Video" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6 text-white">
-                    <span class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1"><i class="fa-solid fa-video mr-1"></i> Video / Videoclip</span>
-                    <h3 class="text-xl font-bold">Live Music Video</h3>
-                    <p class="text-sm text-gray-300 mt-1 line-clamp-2">Riprese dinamiche e montaggio ritmato a tempo di musica.</p>
-                </div>
-                <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                    <i class="fa-solid fa-expand text-sm"></i>
-                </div>
-            </div>
-
-            <!-- Progetto 5 (Photo) -->
-            <div class="portfolio-item group relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-dark-card border border-gray-200 dark:border-dark-border cursor-pointer shadow-lg" data-category="photo" data-title="Architectural Landscapes" data-desc="Reportage di architettura moderna e linee geometriche urbane." data-media="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop" data-type="image">
-                <div class="aspect-[16/10] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop" alt="Architecture" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6 text-white">
-                    <span class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1"><i class="fa-solid fa-camera mr-1"></i> Fotografia / Architettura</span>
-                    <h3 class="text-xl font-bold">Modern Architecture</h3>
-                    <p class="text-sm text-gray-300 mt-1 line-clamp-2">Geometrie, linee pulite e contrasti di luce e ombra.</p>
-                </div>
-                <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                    <i class="fa-solid fa-expand text-sm"></i>
-                </div>
-            </div>
-
-            <!-- Progetto 6 (Wedding) -->
-            <div class="portfolio-item group relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-dark-card border border-gray-200 dark:border-dark-border cursor-pointer shadow-lg" data-category="wedding" data-title="Destination Wedding" data-desc="Servizio fotografico di coppia in location paesaggistiche esclusive." data-media="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200&auto=format&fit=crop" data-type="image">
-                <div class="aspect-[16/10] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200&auto=format&fit=crop" alt="Destination Wedding" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6 text-white">
-                    <span class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1"><i class="fa-solid fa-ring mr-1"></i> Wedding / Destination</span>
-                    <h3 class="text-xl font-bold">Destination Love Story</h3>
-                    <p class="text-sm text-gray-300 mt-1 line-clamp-2">Atmosfere intime e paesaggi mozzafiato.</p>
-                </div>
-                <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                    <i class="fa-solid fa-expand text-sm"></i>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Services / Packages Section -->
-    <section id="services" class="py-28 bg-gray-50 dark:bg-dark-surface border-y border-gray-200 dark:border-dark-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-amber-500 font-semibold tracking-widest text-sm uppercase">Cosa Offro</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mt-2">Pacchetti & Servizi</h2>
-                <p class="text-gray-600 dark:text-gray-400 mt-4">Soluzioni professionali personalizzate per aziende, brand, eventi e privati.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Servizio 1 -->
-                <div class="bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border rounded-3xl p-8 flex flex-col justify-between shadow-xl">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-2xl mb-6">
-                            <i class="fa-solid fa-camera"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold">Servizio Fotografico</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mt-3">Ritratti professionali, portfolio moda, corporate headshots ed eventi aziendali.</p>
-                        <ul class="space-y-3 mt-6 text-sm text-gray-700 dark:text-gray-300">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Scatti in alta risoluzione</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Post-produzione Lightroom/Photoshop</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Galleria cloud privata</li>
-                        </ul>
-                    </div>
-                    <div class="pt-8 mt-8 border-t border-gray-100 dark:border-dark-border flex items-center justify-between">
-                        <div>
-                            <span class="text-xs text-gray-500 block">A partire da</span>
-                            <span class="text-2xl font-extrabold">€250</span>
-                        </div>
-                        <a href="#contact" class="px-5 py-2.5 bg-gray-900 text-white dark:bg-white dark:text-black font-semibold text-sm rounded-full hover:bg-amber-500 dark:hover:bg-amber-500 dark:hover:text-black transition">Prenota</a>
-                    </div>
-                </div>
-
-                <!-- Servizio 2 (Featured) -->
-                <div class="bg-gradient-to-b from-amber-500/10 to-transparent dark:bg-dark-card border-2 border-amber-500 rounded-3xl p-8 flex flex-col justify-between shadow-2xl relative">
-                    <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-black font-bold text-xs uppercase px-4 py-1.5 rounded-full tracking-wider">Più Richiesto</span>
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-amber-500 text-black flex items-center justify-center text-2xl mb-6 shadow-lg shadow-amber-500/30">
-                            <i class="fa-solid fa-video"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold">Produzione Video & Spot</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mt-3">Spot commerciali, videoclip musicali, video promozionali per social media e aziende.</p>
-                        <ul class="space-y-3 mt-6 text-sm text-gray-700 dark:text-gray-300">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Riprese 4K con Cinema Camera</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Stabilizzatore & Drone 4K</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Montaggio & Color Grading professionale</li>
-                        </ul>
-                    </div>
-                    <div class="pt-8 mt-8 border-t border-gray-200 dark:border-dark-border flex items-center justify-between">
-                        <div>
-                            <span class="text-xs text-gray-500 block">A partire da</span>
-                            <span class="text-2xl font-extrabold">€600</span>
-                        </div>
-                        <a href="#contact" class="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-black font-semibold text-sm rounded-full transition shadow-lg shadow-amber-500/20">Prenota</a>
-                    </div>
-                </div>
-
-                <!-- Servizio 3 -->
-                <div class="bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border rounded-3xl p-8 flex flex-col justify-between shadow-xl">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-2xl mb-6">
-                            <i class="fa-solid fa-ring"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold">Wedding Reportage</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mt-3">Copertura completa della giornata di nozze in stile cinematografico e reportagistico.</p>
-                        <ul class="space-y-3 mt-6 text-sm text-gray-700 dark:text-gray-300">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Due operatori dedicati</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Trailer cinematografico + film intero</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Album fotografico di lusso</li>
-                        </ul>
-                    </div>
-                    <div class="pt-8 mt-8 border-t border-gray-100 dark:border-dark-border flex items-center justify-between">
-                        <div>
-                            <span class="text-xs text-gray-500 block">A partire da</span>
-                            <span class="text-2xl font-extrabold">€1200</span>
-                        </div>
-                        <a href="#contact" class="px-5 py-2.5 bg-gray-900 text-white dark:bg-white dark:text-black font-semibold text-sm rounded-full hover:bg-amber-500 dark:hover:bg-amber-500 dark:hover:text-black transition">Prenota</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gear & Tech Section -->
-    <section id="gear" class="py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div>
-                <span class="text-amber-500 font-semibold tracking-widest text-sm uppercase">Technical Setup</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mt-2">Attrezzatura & Software</h2>
-            </div>
-            <p class="max-w-md text-gray-600 dark:text-gray-400 text-sm">Utilizzo esclusivamente strumenti professionali di fascia alta per garantire massima nitidezza, gamma dinamica e resa cromatica cinematografica.</p>
-        </div>
-
-        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-gray-50 dark:bg-dark-card border border-gray-200 dark:border-dark-border rounded-2xl p-6 text-center">
-                <i class="fa-solid fa-video text-amber-500 text-3xl mb-4"></i>
-                <h4 class="font-bold text-lg">Cinema Cameras</h4>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Sony FX3 & RED Komodo 6K</p>
-            </div>
-            <div class="bg-gray-50 dark:bg-dark-card border border-gray-200 dark:border-dark-border rounded-2xl p-6 text-center">
-                <i class="fa-solid fa-camera-retro text-amber-500 text-3xl mb-4"></i>
-                <h4 class="font-bold text-lg">Ottiche Prime & Zoom</h4>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Sigma Art & Sony G-Master</p>
-            </div>
-            <div class="bg-gray-50 dark:bg-dark-card border border-gray-200 dark:border-dark-border rounded-2xl p-6 text-center">
-                <i class="fa-solid fa-helicopter text-amber-500 text-3xl mb-4"></i>
-                <h4 class="font-bold text-lg">Aerial Drone 4K</h4>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">DJI Mavic 3 Pro Cine</p>
-            </div>
-            <div class="bg-gray-50 dark:bg-dark-card border border-gray-200 dark:border-dark-border rounded-2xl p-6 text-center">
-                <i class="fa-solid fa-laptop-code text-amber-500 text-3xl mb-4"></i>
-                <h4 class="font-bold text-lg">Post-Produzione</h4>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">DaVinci Resolve & Lightroom</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-28 bg-gray-50 dark:bg-dark-surface border-t border-gray-200 dark:border-dark-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="relative">
-                <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop" alt="Photographer" class="w-full h-full object-cover">
-                </div>
-                <div class="absolute -bottom-6 -right-6 bg-amber-500 text-black font-extrabold p-8 rounded-3xl hidden sm:block shadow-xl">
-                    <span class="block text-4xl">8+</span>
-                    <span class="text-sm uppercase tracking-wider font-semibold">Anni di ed. & shooting</span>
-                </div>
-            </div>
-            <div class="space-y-6">
-                <span class="text-amber-500 font-semibold tracking-widest text-sm uppercase">Chi Sono</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Catturare l'istante perfetto è un'arte.</h2>
-                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Ciao! Sono un fotografo e videomaker professionista con base in Italia e attivo su scala internazionale. La mia passione è nata dall'amore per il cinema e la luce naturale. Aiuto brand, agenzie e coppie a trasformare le loro idee in produzioni visive memorabili.
+            <div class="md:col-span-7 space-y-6">
+                <span class="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">Fotografo & Videomaker</span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-neutral-900 dark:text-neutral-100">
+                    Catturo la realtà con <span class="italic font-serif">essenzialità</span> e narrazione visiva.
+                </h1>
+                <p class="text-neutral-600 dark:text-neutral-400 font-light text-base leading-relaxed">
+                    Ciao, sono [Tuo Nome]. Mi dedico alla creazione di immagini e racconti video focalizzati sulla cura dei dettagli, l'uso consapevole della luce e toni neutri. Lavoro su progetti commerciali, ritrattistica e documentazione di eventi, offrendo uno sguardo calmo e misurato.
                 </p>
-                <div class="grid grid-cols-2 gap-6 pt-4">
-                    <div>
-                        <h4 class="text-3xl font-extrabold text-amber-500">250+</h4>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Progetti Video & Foto completati</p>
-                    </div>
-                    <div>
-                        <h4 class="text-3xl font-extrabold text-amber-500">100%</h4>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Clienti soddisfatti</p>
-                    </div>
+                <div class="pt-2 flex flex-wrap gap-4">
+                    <a href="#projects" class="px-6 py-3 bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 rounded-full text-xs font-medium uppercase tracking-wider hover:opacity-90 transition">
+                        Vedi i progetti
+                    </a>
+                    <a href="#contact" class="px-6 py-3 border border-neutral-300 dark:border-neutral-700 rounded-full text-xs font-medium uppercase tracking-wider hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 transition">
+                        Scrivimi
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact / Booking Section -->
-    <section id="contact" class="py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-                <span class="text-amber-500 font-semibold tracking-widest text-sm uppercase">Mettiti in contatto</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mt-2">Realizziamo il tuo prossimo progetto</h2>
-                <p class="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                    Hai in mente un video promozionale, un servizio fotografico o hai bisogno di coprire un evento speciale? Compila il modulo o scrivimi direttamente. Ti risponderò entro 24 ore.
+    <!-- 2. Progetti (Fotografia e Video) -->
+    <section id="projects" class="py-24 bg-neutral-100/60 dark:bg-neutral-900/40 border-y border-neutral-200/80 dark:border-neutral-800/80">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">Portfolio</span>
+                    <h2 class="text-2xl sm:text-3xl font-light tracking-tight text-neutral-900 dark:text-neutral-100 mt-1">Lavori Selezionati</h2>
+                </div>
+                <!-- Filtri -->
+                <div class="flex flex-wrap gap-2" id="filter-buttons">
+                    <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full text-xs font-medium bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 transition">Tutti</button>
+                    <button data-filter="photo" class="filter-btn px-4 py-2 rounded-full text-xs font-medium bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 transition">Fotografie</button>
+                    <button data-filter="video" class="filter-btn px-4 py-2 rounded-full text-xs font-medium bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 transition">Video</button>
+                </div>
+            </div>
+
+            <!-- Griglia Progetti -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                
+                <!-- Progetto 1 (Foto) -->
+                <div class="portfolio-item group cursor-pointer" data-category="photo" data-title="Silenzio Urbano" data-desc="Serie fotografica sull'architettura e le forme geometriche nella luce del primo mattino." data-media="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop">
+                    <div class="aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop" alt="Silenzio Urbano" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    </div>
+                    <div class="mt-4 flex items-center justify-between text-xs text-neutral-400">
+                        <span>Fotografia / Architettura</span>
+                        <span>2026</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mt-1 group-hover:text-neutral-500 transition">Silenzio Urbano</h3>
+                </div>
+
+                <!-- Progetto 2 (Video) -->
+                <div class="portfolio-item group cursor-pointer" data-category="video" data-title="Short Commercial" data-desc="Spot promozionale dal ritmo fluido e dai toni desaturati per studio di design." data-media="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop">
+                    <div class="aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800 relative">
+                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop" alt="Short Commercial" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-80 group-hover:opacity-100 transition">
+                            <div class="w-10 h-10 rounded-full bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm flex items-center justify-center text-neutral-900 dark:text-neutral-100">
+                                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between text-xs text-neutral-400">
+                        <span>Video / Commercial</span>
+                        <span>2025</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mt-1 group-hover:text-neutral-500 transition">Design Studio Spot</h3>
+                </div>
+
+                <!-- Progetto 3 (Foto) -->
+                <div class="portfolio-item group cursor-pointer" data-category="photo" data-title="Studio Ritratti" data-desc="Sessione di ritrattistica minimale focalizzata su espressioni naturali e ombre morbide." data-media="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop">
+                    <div class="aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop" alt="Studio Ritratti" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    </div>
+                    <div class="mt-4 flex items-center justify-between text-xs text-neutral-400">
+                        <span>Fotografia / Ritratti</span>
+                        <span>2025</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mt-1 group-hover:text-neutral-500 transition">Studio Ritratti</h3>
+                </div>
+
+                <!-- Progetto 4 (Video) -->
+                <div class="portfolio-item group cursor-pointer" data-category="video" data-title="Documentario Breve" data-desc="Mini doc sulla lavorazione artigianale con riprese dettagliate e audio ambiente curato." data-media="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop">
+                    <div class="aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800 relative">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" alt="Documentario Breve" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-80 group-hover:opacity-100 transition">
+                            <div class="w-10 h-10 rounded-full bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm flex items-center justify-center text-neutral-900 dark:text-neutral-100">
+                                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between text-xs text-neutral-400">
+                        <span>Video / Doc</span>
+                        <span>2025</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mt-1 group-hover:text-neutral-500 transition">Mani e Materia</h3>
+                </div>
+
+                <!-- Progetto 5 (Foto) -->
+                <div class="portfolio-item group cursor-pointer" data-category="photo" data-title="Luce Naturale" data-desc="Reportage di viaggio tra paesaggi vulcanici ed elementi naturali." data-media="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
+                    <div class="aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Luce Naturale" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    </div>
+                    <div class="mt-4 flex items-center justify-between text-xs text-neutral-400">
+                        <span>Fotografia / Paesaggio</span>
+                        <span>2024</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mt-1 group-hover:text-neutral-500 transition">Terre d'Islanda</h3>
+                </div>
+
+                <!-- Progetto 6 (Video) -->
+                <div class="portfolio-item group cursor-pointer" data-category="video" data-title="Event Recap" data-desc="Sintesi dinamica ma elegante di un evento culturale e mostra d'arte." data-media="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop">
+                    <div class="aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800 relative">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop" alt="Event Recap" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-80 group-hover:opacity-100 transition">
+                            <div class="w-10 h-10 rounded-full bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm flex items-center justify-center text-neutral-900 dark:text-neutral-100">
+                                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between text-xs text-neutral-400">
+                        <span>Video / Eventi</span>
+                        <span>2024</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mt-1 group-hover:text-neutral-500 transition">Art Exhibition Aftermovie</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Sezione Attrezzatura (Gear) -->
+    <section id="gear" class="py-24 max-w-6xl mx-auto px-6">
+        <div class="max-w-xl mb-16">
+            <span class="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">Strumenti del mestiere</span>
+            <h2 class="text-2xl sm:text-3xl font-light tracking-tight text-neutral-900 dark:text-neutral-100 mt-1">La Mia Attrezzatura</h2>
+            <p class="text-neutral-500 dark:text-neutral-400 text-sm font-light mt-3">Sguardo attento e strumenti affidabili per garantire la massima qualità e continuità del flusso di lavoro.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Camere -->
+            <div class="p-6 rounded-2xl bg-neutral-100/50 dark:bg-neutral-900/50 border border-neutral-200/80 dark:border-neutral-800/80 space-y-3">
+                <div class="w-8 h-8 rounded-lg bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center text-neutral-700 dark:text-neutral-300">
+                    <i class="fa-solid fa-camera text-sm"></i>
+                </div>
+                <h3 class="font-medium text-base text-neutral-900 dark:text-neutral-100">Corpi Macchina</h3>
+                <ul class="text-xs text-neutral-500 dark:text-neutral-400 space-y-2 font-light">
+                    <li>Sony FX3 (Video Cinema 4K)</li>
+                    <li>Sony A7IV (Foto & Backup Video)</li>
+                </ul>
+            </div>
+
+            <!-- Ottiche -->
+            <div class="p-6 rounded-2xl bg-neutral-100/50 dark:bg-neutral-900/50 border border-neutral-200/80 dark:border-neutral-800/80 space-y-3">
+                <div class="w-8 h-8 rounded-lg bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center text-neutral-700 dark:text-neutral-300">
+                    <i class="fa-solid fa-circle-dot text-sm"></i>
+                </div>
+                <h3 class="font-medium text-base text-neutral-900 dark:text-neutral-100">Obiettivi / Lenti</h3>
+                <ul class="text-xs text-neutral-500 dark:text-neutral-400 space-y-2 font-light">
+                    <li>35mm f/1.4 Prime Lens</li>
+                    <li>85mm f/1.8 Portrait Lens</li>
+                    <li>24-70mm f/2.8 Zoom Lens</li>
+                </ul>
+            </div>
+
+            <!-- Suono e Droni -->
+            <div class="p-6 rounded-2xl bg-neutral-100/50 dark:bg-neutral-900/50 border border-neutral-200/80 dark:border-neutral-800/80 space-y-3">
+                <div class="w-8 h-8 rounded-lg bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center text-neutral-700 dark:text-neutral-300">
+                    <i class="fa-solid fa-drone text-sm"></i>
+                </div>
+                <h3 class="font-medium text-base text-neutral-900 dark:text-neutral-100">Aereo & Audio</h3>
+                <ul class="text-xs text-neutral-500 dark:text-neutral-400 space-y-2 font-light">
+                    <li>DJI Mini 3 Pro (Riprese aeree)</li>
+                    <li>Røde Wireless GO II & Lavalier</li>
+                </ul>
+            </div>
+
+            <!-- Software -->
+            <div class="p-6 rounded-2xl bg-neutral-100/50 dark:bg-neutral-900/50 border border-neutral-200/80 dark:border-neutral-800/80 space-y-3">
+                <div class="w-8 h-8 rounded-lg bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center text-neutral-700 dark:text-neutral-300">
+                    <i class="fa-solid fa-sliders text-sm"></i>
+                </div>
+                <h3 class="font-medium text-base text-neutral-900 dark:text-neutral-100">Post-Produzione</h3>
+                <ul class="text-xs text-neutral-500 dark:text-neutral-400 space-y-2 font-light">
+                    <li>DaVinci Resolve Studio (Coloring)</li>
+                    <li>Adobe Lightroom Classic & Photoshop</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Contatti & Download Curriculum -->
+    <section id="contact" class="py-24 bg-neutral-100/60 dark:bg-neutral-900/40 border-t border-neutral-200/80 dark:border-neutral-800/80">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-5 space-y-6">
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">Contatti</span>
+                    <h2 class="text-2xl sm:text-3xl font-light tracking-tight text-neutral-900 dark:text-neutral-100 mt-1">Parliamo del tuo progetto</h2>
+                </div>
+                <p class="text-neutral-600 dark:text-neutral-400 text-sm font-light leading-relaxed">
+                    Se desideri collaborare, richiedere informazioni o un preventivo per un servizio fotografico o video, non esitare a scrivermi.
                 </p>
 
-                <div class="space-y-6 mt-8">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-                        <div>
-                            <span class="text-xs text-gray-500 block">Email diretta</span>
-                            <a href="mailto:info@tuodominio.it" class="font-bold hover:text-amber-500 transition">info@tuodominio.it</a>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <div>
-                            <span class="text-xs text-gray-500 block">Telefono / WhatsApp</span>
-                            <a href="tel:+393331234567" class="font-bold hover:text-amber-500 transition">+39 333 123 4567</a>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <div>
-                            <span class="text-xs text-gray-500 block">Studio</span>
-                            <span class="font-bold">Milano / Roma - Disponibile in trasferta</span>
-                        </div>
-                    </div>
+                <!-- Box Scarica CV -->
+                <div class="p-6 rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 space-y-3 shadow-sm">
+                    <h4 class="font-medium text-sm text-neutral-900 dark:text-neutral-100">Curriculum Vitae</h4>
+                    <p class="text-xs text-neutral-500 dark:text-neutral-400 font-light">Consulta il mio percorso professionale, le competenze e le passate collaborazioni.</p>
+                    <a href="curriculum.pdf" download class="inline-flex items-center gap-2 px-4 py-2 bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 rounded-lg text-xs font-medium uppercase tracking-wider hover:opacity-90 transition">
+                        <i class="fa-solid fa-file-pdf"></i> Scarica CV (PDF)
+                    </a>
+                </div>
+
+                <div class="space-y-3 pt-2 text-sm text-neutral-600 dark:text-neutral-400 font-light">
+                    <p class="flex items-center gap-3">
+                        <i class="fa-solid fa-envelope text-neutral-400 text-xs"></i>
+                        <a href="mailto:info@tuodominio.it" class="hover:text-neutral-900 dark:hover:text-neutral-100 transition">info@tuodominio.it</a>
+                    </p>
+                    <p class="flex items-center gap-3">
+                        <i class="fa-solid fa-phone text-neutral-400 text-xs"></i>
+                        <a href="tel:+393331234567" class="hover:text-neutral-900 dark:hover:text-neutral-100 transition">+39 333 123 4567</a>
+                    </p>
+                    <p class="flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-neutral-400 text-xs"></i>
+                        <span>Milano / Roma - Disponibile in trasferta</span>
+                    </p>
                 </div>
             </div>
 
             <!-- Form di Contatto -->
-            <div class="bg-gray-50 dark:bg-dark-card border border-gray-200 dark:border-dark-border rounded-3xl p-8 shadow-xl">
-                <form id="contact-form" class="space-y-6">
+            <div class="md:col-span-7">
+                <form id="contact-form" class="bg-white dark:bg-neutral-900 p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 space-y-5 shadow-sm">
                     <div>
-                        <label class="block text-sm font-semibold mb-2">Nome e Cognome</label>
-                        <input type="text" required class="w-full px-4 py-3 rounded-xl bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border focus:border-amber-500 focus:outline-none transition text-sm" placeholder="Mario Rossi">
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-semibold mb-2">Email</label>
-                            <input type="email" required class="w-full px-4 py-3 rounded-xl bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border focus:border-amber-500 focus:outline-none transition text-sm" placeholder="mario@example.com">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-2">Tipologia Servizio</label>
-                            <select class="w-full px-4 py-3 rounded-xl bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border focus:border-amber-500 focus:outline-none transition text-sm">
-                                <option>Produzione Video / Spot</option>
-                                <option>Servizio Fotografico</option>
-                                <option>Wedding Reportage</option>
-                                <option>Altro / Collaborazione</option>
-                            </select>
-                        </div>
+                        <label class="block text-xs font-medium uppercase tracking-wider text-neutral-500 mb-2">Nome</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-lg bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 focus:border-neutral-500 focus:outline-none transition text-sm text-neutral-900 dark:text-neutral-100" placeholder="Il tuo nome">
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold mb-2">Messaggio / Dettagli Progetto</label>
-                        <rows="4" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border focus:border-amber-500 focus:outline-none transition text-sm" placeholder="Raccontami del tuo progetto, date e obiettivi..."></textarea>
+                        <label class="block text-xs font-medium uppercase tracking-wider text-neutral-500 mb-2">Email</label>
+                        <input type="email" required class="w-full px-4 py-3 rounded-lg bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 focus:border-neutral-500 focus:outline-none transition text-sm text-neutral-900 dark:text-neutral-100" placeholder="tua@email.com">
                     </div>
-                    <button type="submit" class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-xl transition shadow-lg shadow-amber-500/20">
+                    <div>
+                        <label class="block text-xs font-medium uppercase tracking-wider text-neutral-500 mb-2">Messaggio</label>
+                        <textarea rows="4" required class="w-full px-4 py-3 rounded-lg bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 focus:border-neutral-500 focus:outline-none transition text-sm text-neutral-900 dark:text-neutral-100" placeholder="Scrivi qui i dettagli del progetto..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 rounded-lg text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition">
                         Invia Messaggio
                     </button>
-                    <p id="form-success" class="hidden text-green-500 text-sm text-center font-medium">Messaggio inviato con successo! Ti risponderò presto.</p>
+                    <p id="form-success" class="hidden text-xs text-center text-neutral-500 dark:text-neutral-400 font-light pt-2">Messaggio inviato correttamente. Risponderò il prima possibile.</p>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-950 text-white py-12 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-            <p class="text-sm text-gray-400">&copy; 2026 [Tuo Nome] Visuals. Tutti i diritti riservati.</p>
-            <div class="flex items-center gap-6 text-xl">
-                <a href="#" class="hover:text-amber-500 transition"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-amber-500 transition"><i class="fa-brands fa-vimeo-v"></i></a>
-                <a href="#" class="hover:text-amber-500 transition"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#" class="hover:text-amber-500 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+    <footer class="py-8 text-center text-xs text-neutral-400 border-t border-neutral-200 dark:border-neutral-800">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 [Tuo Nome] Visuals. Tutti i diritti riservati.</p>
+            <div class="flex items-center gap-6">
+                <a href="#" class="hover:text-neutral-700 dark:hover:text-neutral-200 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-neutral-700 dark:hover:text-neutral-200 transition"><i class="fa-brands fa-vimeo-v"></i></a>
+                <a href="#" class="hover:text-neutral-700 dark:hover:text-neutral-200 transition"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- Modale Immagine / Dettaglio -->
-    <div id="media-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="relative max-w-4xl w-full bg-dark-card border border-dark-border rounded-3xl overflow-hidden shadow-2xl">
-            <button id="modal-close" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-amber-500 hover:text-black transition">
-                <i class="fa-solid fa-xmark text-lg"></i>
+    <!-- Modale Dettaglio Progetto -->
+    <div id="media-modal" class="fixed inset-0 z-50 hidden bg-neutral-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="relative max-w-3xl w-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
+            <button id="modal-close" class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-neutral-200/80 dark:bg-neutral-800/80 text-neutral-700 dark:text-neutral-200 flex items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 transition">
+                <i class="fa-solid fa-xmark text-sm"></i>
             </button>
-            <div class="aspect-video w-full overflow-hidden bg-black">
-                <img id="modal-img" src="" alt="Modal preview" class="w-full h-full object-contain">
+            <div class="aspect-video w-full bg-neutral-900 overflow-hidden">
+                <img id="modal-img" src="" alt="Anteprima" class="w-full h-full object-contain">
             </div>
-            <div class="p-6">
-                <h3 id="modal-title" class="text-2xl font-bold text-white">Titolo Progetto</h3>
-                <p id="modal-desc" class="text-sm text-gray-300 mt-2">Descrizione dettagliata del progetto multimediale.</p>
+            <div class="p-6 space-y-2">
+                <h3 id="modal-title" class="text-xl font-medium text-neutral-900 dark:text-neutral-100">Titolo Progetto</h3>
+                <p id="modal-desc" class="text-xs text-neutral-500 dark:text-neutral-400 font-light leading-relaxed">Descrizione del progetto.</p>
             </div>
         </div>
     </div>
 
     <!-- JavaScript -->
     <script>
-        // Toggle Dark/Light Mode
+        // Toggle Dark Mode
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const html = document.documentElement;
@@ -499,12 +395,10 @@
             }
         });
 
-        // Mobile Menu Toggle
+        // Mobile Menu
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
         // Filtri Portfolio
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -513,11 +407,11 @@
         filterButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterButtons.forEach(b => {
-                    b.classList.remove('bg-amber-500', 'text-black');
-                    b.classList.add('bg-gray-100', 'dark:bg-dark-card');
+                    b.classList.remove('bg-neutral-900', 'text-white', 'dark:bg-neutral-100', 'dark:text-neutral-900');
+                    b.classList.add('bg-neutral-200', 'dark:bg-neutral-800', 'text-neutral-700', 'dark:text-neutral-300');
                 });
-                btn.classList.add('bg-amber-500', 'text-black');
-                btn.classList.remove('bg-gray-100', 'dark:bg-dark-card');
+                btn.classList.add('bg-neutral-900', 'text-white', 'dark:bg-neutral-100', 'dark:text-neutral-900');
+                btn.classList.remove('bg-neutral-200', 'dark:bg-neutral-800');
 
                 const filter = btn.getAttribute('data-filter');
                 portfolioItems.forEach(item => {
@@ -530,7 +424,7 @@
             });
         });
 
-        // Modale Interattiva
+        // Modale Progetti
         const modal = document.getElementById('media-modal');
         const modalImg = document.getElementById('modal-img');
         const modalTitle = document.getElementById('modal-title');
@@ -551,14 +445,14 @@
             if (e.target === modal) modal.classList.add('hidden');
         });
 
-        // Form di Contatto Feedback
+        // Form contatto
         const contactForm = document.getElementById('contact-form');
         const formSuccess = document.getElementById('form-success');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             formSuccess.classList.remove('hidden');
             contactForm.reset();
-            setTimeout(() => formSuccess.classList.add('hidden'), 5000);
+            setTimeout(() => formSuccess.classList.add('hidden'), 4000);
         });
     </script>
 </body>
