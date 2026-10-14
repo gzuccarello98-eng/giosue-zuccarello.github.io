@@ -98,12 +98,12 @@
                     Ciao, il mio nome è <span class="italic font-serif">Giosuè</span> !
                 </h1>
                 <p class="text-neutral-600 dark:text-neutral-400 font-light text-sm sm:text-base leading-relaxed">
-    Ho conseguito la Laurea in DAMS (curriculum Informatica e produzioni digitali) presso l’Università
-    degli Studi di Torino e completato un percorso in Creative Writing e Storytelling con la Wesleyan
-    University.<br>
-    La mia preparazione unisce una profonda sensibilità narrativa (ed è mia volontà ampliarne la conoscenza nelle sue
-    varie forme e declinazioni) alla padronanza delle tecnologie digitali e dei software di montaggio e post-produzione.
-</p>
+                    Ho conseguito la Laurea in DAMS (curriculum Informatica e produzioni digitali) presso l’Università
+                    degli Studi di Torino e completato un percorso in Creative Writing e Storytelling con la Wesleyan
+                    University.<br>
+                    La mia preparazione unisce una profonda sensibilità narrativa (ed è mia volontà ampliarne la conoscenza nelle sue
+                    varie forme e declinazioni) alla padronanza delle tecnologie digitali e dei software di montaggio e post-produzione.
+                </p>
                 
                 <div class="pt-2 flex flex-wrap gap-4">
                     <a href="#projects" class="px-5 py-2.5 bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 rounded-full text-[11px] font-medium uppercase tracking-wider hover:opacity-90 transition">
@@ -211,8 +211,19 @@
             </div>
 
             <!-- CONTENUTO PRINCIPALE VIDEO -->
-            <div id="section-video" class="hidden transition-all duration-500">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div id="section-video" class="hidden space-y-8 transition-all duration-500">
+                <!-- Sotto-categorie Video -->
+                <div class="flex flex-wrap gap-2 border-b border-neutral-200 dark:border-neutral-800 pb-4">
+                    <button onclick="switchVideoCategory('horizontal')" id="btn-vid-horizontal" class="vid-btn px-4 py-1.5 rounded-lg text-xs font-medium bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 transition shadow-sm">
+                        Formato Orizzontale
+                    </button>
+                    <button onclick="switchVideoCategory('vertical')" id="btn-vid-vertical" class="vid-btn px-4 py-1.5 rounded-lg text-xs font-medium text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition">
+                        Formato Verticale
+                    </button>
+                </div>
+
+                <!-- Categoria: Formato Orizzontale -->
+                <div id="vid-horizontal" class="video-category grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="space-y-3">
                         <div class="aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
                             <iframe class="w-full h-full" src="https://www.youtube.com/embed/43ykpd6cHZs" title="Fuori controllo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -247,6 +258,38 @@
                         <div class="flex items-center justify-between text-xs">
                             <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>DLMG</strong></h3>
                             <span class="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-200 dark:border-neutral-800 px-2 py-0.5 rounded-full">VideoClip</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoria: Formato Verticale (Reels / Shorts / TikTok) -->
+                <div id="vid-vertical" class="video-category hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <!-- Esempio di video verticale (puoi sostituire i link con i tuoi embed verticali) -->
+                    <div class="space-y-3 max-w-xs mx-auto w-full">
+                        <div class="aspect-[9/16] w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/l9jiaVhtKnw" title="Verticale 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>Reel / Short 1</strong></h3>
+                            <span class="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-200 dark:border-neutral-800 px-2 py-0.5 rounded-full">Verticale</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3 max-w-xs mx-auto w-full">
+                        <div class="aspect-[9/16] w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/uUR31XiIr4Y" title="Verticale 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>Reel / Short 2</strong></h3>
+                            <span class="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-200 dark:border-neutral-800 px-2 py-0.5 rounded-full">Verticale</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3 max-w-xs mx-auto w-full">
+                        <div class="aspect-[9/16] w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/istmXarvRvA" title="Verticale 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>Reel / Short 3</strong></h3>
+                            <span class="text-[10px] text-neutral-400 uppercase tracking-wider border border-neutral-200 dark:border-neutral-800 px-2 py-0.5 rounded-full">Verticale</span>
                         </div>
                     </div>
                 </div>
@@ -397,7 +440,6 @@
         const themeIcon = document.getElementById('theme-icon');
         const html = document.documentElement;
 
-        // Se l'utente ha salvato esplicitamente 'dark', lo applica, altrimenti parte sempre in modalità chiara
         if (localStorage.theme === 'dark') {
             html.classList.add('dark');
             themeIcon.classList.replace('fa-moon', 'fa-sun');
@@ -478,7 +520,7 @@
             }
         }
 
-        // Funzione per alternare le 3 sotto-categorie fotografiche
+        // Funzione per alternare le sotto-categorie fotografiche
         function switchPhotoCategory(category) {
             const categories = document.querySelectorAll('.photo-category');
             const catButtons = document.querySelectorAll('.cat-btn');
@@ -492,6 +534,24 @@
             });
 
             const activeBtn = document.getElementById('btn-cat-' + category);
+            activeBtn.classList.add('bg-neutral-900', 'text-white', 'dark:bg-neutral-100', 'dark:text-neutral-900', 'shadow-sm');
+            activeBtn.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+        }
+
+        // Funzione per alternare le sotto-categorie video (Orizzontale / Verticale)
+        function switchVideoCategory(category) {
+            const categories = document.querySelectorAll('.video-category');
+            const vidButtons = document.querySelectorAll('.vid-btn');
+
+            categories.forEach(cat => cat.classList.add('hidden'));
+            document.getElementById('vid-' + category).classList.remove('hidden');
+
+            vidButtons.forEach(btn => {
+                btn.classList.remove('bg-neutral-900', 'text-white', 'dark:bg-neutral-100', 'dark:text-neutral-900', 'shadow-sm');
+                btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+            });
+
+            const activeBtn = document.getElementById('btn-vid-' + category);
             activeBtn.classList.add('bg-neutral-900', 'text-white', 'dark:bg-neutral-100', 'dark:text-neutral-900', 'shadow-sm');
             activeBtn.classList.remove('text-neutral-600', 'dark:text-neutral-400');
         }
