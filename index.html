@@ -88,33 +88,32 @@
         <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <!-- Immagine Rotonda -->
             <div class="md:col-span-5 flex justify-center">
-                <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden bg-neutral-200 dark:bg-neutral-800 shadow-md border-2 border-neutral-200 dark:border-neutral-800 flex-shrink-0">
-                    <img src="profilo.jpg" alt="Giosuè Zuccarello" class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-700">
+                <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden bg-neutral-200 dark:bg-neutral-800 shadow-xl border-2 border-neutral-200 dark:border-neutral-800 flex-shrink-0 group">
+                    <img src="profilo.jpg" alt="Giosuè Zuccarello" class="w-full h-full object-cover opacity-95 group-hover:scale-105 transition duration-700">
                 </div>
             </div>
             <div class="md:col-span-7 space-y-6">
-                <div class="flex items-center gap-2">
-                    <span class="text-[11px] font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">Fotografo & Videomaker</span>
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-200/70 dark:bg-neutral-900 border border-neutral-300/60 dark:border-neutral-800 shadow-sm">
+                    <span class="text-[11px] font-semibold uppercase tracking-widest text-neutral-600 dark:text-neutral-400">Fotografo & Videomaker</span>
                 </div>
-                <h1 class="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight text-neutral-900 dark:text-neutral-100">
-                    Ciao, il mio nome è <span class="italic font-serif">Giosuè</span>!
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-neutral-900 dark:text-neutral-100">
+                    Ciao, il mio nome è <span class="italic font-serif font-normal">Giosuè</span>!
                 </h1>
-                <p class="text-neutral-600 dark:text-neutral-400 font-light text-sm sm:text-base leading-relaxed">
-                    Ho conseguito la Laurea in DAMS (curriculum Informatica e produzioni digitali) <br> presso l’Università
+                <p class="text-neutral-600 dark:text-neutral-300 font-light text-sm sm:text-base leading-relaxed">
+                    Ho conseguito la Laurea in DAMS (curriculum Informatica e produzioni digitali) presso l’Università
                     degli Studi di Torino e completato un percorso in Creative Writing e Storytelling con la Wesleyan
-                    University.<br>
+                    University.<br class="hidden sm:inline"><br class="hidden sm:inline">
                     La mia preparazione unisce una profonda sensibilità narrativa alla padronanza delle tecnologie digitali e dei software di montaggio e post-produzione.
                 </p>
                 
                 <div class="pt-2 flex flex-wrap gap-4">
-                    <a href="#projects" class="px-5 py-2.5 bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 rounded-full text-[11px] font-medium uppercase tracking-wider hover:opacity-90 transition shadow-sm">
+                    <a href="#projects" class="px-6 py-3 bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 rounded-full text-xs font-semibold uppercase tracking-wider hover:opacity-95 hover:shadow-lg transition duration-300">
                         Dai un'occhiata ai miei progetti
                     </a>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- 2. Progetti -->
     <section id="projects" class="py-24 bg-neutral-200 dark:bg-neutral-900 border-y border-neutral-300 dark:border-neutral-800">
         <div class="max-w-6xl mx-auto px-6">
@@ -227,91 +226,121 @@
 
                 <!-- Categoria: Formato Orizzontale -->
                 <div id="vid-horizontal" class="video-category grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Video 1 -->
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between text-xs">
-                            <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>Vinted</strong></h3>
-                            <span class="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wider border border-neutral-300 dark:border-neutral-800 px-2 py-0.5 rounded-full">Pubblicità</span>
+                    <!-- Video 1: Vinted -->
+                    <div class="group/card relative space-y-3.5 rounded-3xl border border-neutral-200/80 bg-white p-3.5 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-700">
+                        <div class="flex items-center justify-between px-1">
+                            <h3 class="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Vinted</h3>
+                            <span class="inline-flex items-center rounded-full bg-neutral-100 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">Pubblicità</span>
                         </div>
-                        <div class="video-container aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="istmXarvRvA">
-                            <img src="https://img.youtube.com/vi/istmXarvRvA/maxresdefault.jpg" alt="Vinted" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/10 transition flex items-center justify-center">
-                                <div class="w-14 h-14 rounded-full bg-neutral-900/80 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
-                                    <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                        <div class="video-container group/video relative aspect-video w-full cursor-pointer overflow-hidden rounded-2xl bg-neutral-950 shadow-inner" data-video-id="istmXarvRvA">
+                            <img src="https://img.youtube.com/vi/istmXarvRvA/maxresdefault.jpg" alt="Vinted" class="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover/video:scale-105 group-hover/video:opacity-100">
+                            <div class="absolute inset-0 bg-neutral-950/20 transition-colors duration-300 group-hover/video:bg-neutral-950/10"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-xl backdrop-blur-md transition-all duration-300 group-hover/video:scale-110 group-hover/video:bg-white dark:bg-neutral-900/90 dark:text-white dark:group-hover/video:bg-neutral-900">
+                                    <i class="fa-solid fa-play ml-0.5 text-xs"></i>
                                 </div>
                             </div>
                         </div>
-                        <!-- Sezione Ruoli -->
-                        <div class="text-xs text-neutral-600 dark:text-neutral-400 flex flex-wrap gap-x-2 gap-y-1">
-                            &bull; <span>Riprese</span>
-                            &bull; <span>Montaggio video</span>
-                            &bull; <span>Color</span>
-                            &bull; <span>Audio</span>
+                        <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+                            <span class="inline-flex items-center gap-1 rounded-lg bg-neutral-100 px-2 py-1 text-[11px] font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300">
+                                <i class="fa-solid fa-video text-[10px] text-neutral-400"></i> Riprese
+                            </span>
+                            <span class="inline-flex items-center gap-1 rounded-lg bg-neutral-100 px-2 py-1 text-[11px] font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300">
+                                <i class="fa-solid fa-scissors text-[10px] text-neutral-400"></i> Montaggio video
+                            </span>
+                            <span class="inline-flex items-center gap-1 rounded-lg bg-neutral-100 px-2 py-1 text-[11px] font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300">
+                                <i class="fa-solid fa-palette text-[10px] text-neutral-400"></i> Color
+                            </span>
+                            <span class="inline-flex items-center gap-1 rounded-lg bg-neutral-100 px-2 py-1 text-[11px] font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300">
+                                <i class="fa-solid fa-sliders text-[10px] text-neutral-400"></i> Audio
+                            </span>
                         </div>
                     </div>
 
-                    <!-- Video 2 -->
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between text-xs">
-                            <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>FUORI CONTROLLO</strong></h3>
-                            <span class="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wider border border-neutral-300 dark:border-neutral-800 px-2 py-0.5 rounded-full">Cortometraggio</span>
+                    <!-- Video 2: FUORI CONTROLLO -->
+                    <div class="group/card relative space-y-3.5 rounded-3xl border border-neutral-200/80 bg-white p-3.5 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-700">
+                        <div class="flex items-center justify-between px-1">
+                            <h3 class="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">FUORI CONTROLLO</h3>
+                            <span class="inline-flex items-center rounded-full bg-neutral-100 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">Cortometraggio</span>
                         </div>
-                        <div class="video-container aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="43ykpd6cHZs">
-                            <img src="https://img.youtube.com/vi/43ykpd6cHZs/maxresdefault.jpg" alt="Fuori controllo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/10 transition flex items-center justify-center">
-                                <div class="w-14 h-14 rounded-full bg-neutral-900/80 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
-                                    <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                        <div class="video-container group/video relative aspect-video w-full cursor-pointer overflow-hidden rounded-2xl bg-neutral-950 shadow-inner" data-video-id="43ykpd6cHZs">
+                            <img src="https://img.youtube.com/vi/43ykpd6cHZs/maxresdefault.jpg" alt="Fuori controllo" class="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover/video:scale-105 group-hover/video:opacity-100">
+                            <div class="absolute inset-0 bg-neutral-950/20 transition-colors duration-300 group-hover/video:bg-neutral-950/10"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-xl backdrop-blur-md transition-all duration-300 group-hover/video:scale-110 group-hover/video:bg-white dark:bg-neutral-900/90 dark:text-white dark:group-hover/video:bg-neutral-900">
+                                    <i class="fa-solid fa-play ml-0.5 text-xs"></i>
                                 </div>
                             </div>
                         </div>
-                        <!-- Sezione Ruoli -->
-                        <div class="text-xs text-neutral-600 dark:text-neutral-400 flex flex-wrap gap-x-2 gap-y-1">
-                            &bull; <span>Soggetto</span>
-                            &bull; <span>Sceneggiatura</span>
-                            &bull; <span>Riprese</span>
-                            &bull; <span>Mix Audio</span>
+                        <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+                            <span class="inline-flex items-center gap-1 rounded-lg bg-neutral-100 px-2 py-1 text-[11px] font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300">
+                                <i class="fa-solid fa-lightbulb text-[10px] text-neutral-400"></i> Soggetto
+                            </span>
+                            <span class="inline-flex items-center gap-1 rounded-lg bg-neutral-100 px-2 py-1 text-[11px] font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300">
+                                <i class="fa-solid fa-pen-nib text-[10px] text-neutral-400"></i> Sceneggiatura
+                            </span>
+                            <span class="inline-flex items-center gap-1 rounded-lg bg-neutral-100 px-2 py-1 text-[11px] font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300">
+                                <i class="fa-solid fa-video text-[10px] text-neutral-400"></i> Riprese
+                            </span>
+                            <span class="inline-flex items-center gap-1 rounded-lg bg-neutral-100 px-2 py-1 text-[11px] font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300">
+                                <i class="fa-solid fa-sliders text-[10px] text-neutral-400"></i> Mix Audio
+                            </span>
                         </div>
                     </div>
 
-                    <!-- Video 3 -->
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between text-xs">
-                            <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>Pleasure</strong></h3>
-                            <span class="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wider border border-neutral-300 dark:border-neutral-800 px-2 py-0.5 rounded-full">Fashion-film</span>
+                    <!-- Video 3: Pleasure -->
+                    <div class="group/card relative space-y-3.5 rounded-3xl border border-neutral-200/80 bg-white p-3.5 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-700">
+                        <div class="flex items-center justify-between px-1">
+                            <h3 class="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Pleasure</h3>
+                            <span class="inline-flex items-center rounded-full bg-neutral-100 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">Fashion-film</span>
                         </div>
-                        <div class="video-container aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="uUR31XiIr4Y">
-                            <img src="https://img.youtube.com/vi/uUR31XiIr4Y/maxresdefault.jpg" alt="Pleasure" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/10 transition flex items-center justify-center">
-                                <div class="w-14 h-14 rounded-full bg-neutral-900/80 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
-                                    <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                        <div class="video-container group/video relative aspect-video w-full cursor-pointer overflow-hidden rounded-2xl bg-neutral-950 shadow-inner" data-video-id="uUR31XiIr4Y">
+                            <img src="https://img.youtube.com/vi/uUR31XiIr4Y/maxresdefault.jpg" alt="Pleasure" class="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover/video:scale-105 group-hover/video:opacity-100">
+                            <div class="absolute inset-0 bg-neutral-950/20 transition-colors duration-300 group-hover/video:bg-neutral-950/10"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-xl backdrop-blur-md transition-all duration-300 group-hover/video:scale-110 group-hover/video:bg-white dark:bg-neutral-900/90 dark:text-white dark:group-hover/video:bg-neutral-900">
+                                    <i class="fa-solid fa-play ml-0.5 text-xs"></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="text-xs text-neutral-600 dark:text-neutral-400 flex flex-wrap gap-x-2 gap-y-1">
-                            &bull; <span>Soggetto</span>
-                            &bull; <span>Montaggio video</span>
-                            &bull; <span>Audio</span>
+                        <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+                            <span class="inline-flex items-center gap-1 rounded-lg bg-neutral-100 px-2 py-1 text-[11px] font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300">
+                                <i class="fa-solid fa-lightbulb text-[10px] text-neutral-400"></i> Soggetto
+                            </span>
+                            <span class="inline-flex items-center gap-1 rounded-lg bg-neutral-100 px-2 py-1 text-[11px] font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300">
+                                <i class="fa-solid fa-scissors text-[10px] text-neutral-400"></i> Montaggio video
+                            </span>
+                            <span class="inline-flex items-center gap-1 rounded-lg bg-neutral-100 px-2 py-1 text-[11px] font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300">
+                                <i class="fa-solid fa-sliders text-[10px] text-neutral-400"></i> Audio
+                            </span>
                         </div>
                     </div>
 
-                    <!-- Video 4 -->
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between text-xs">
-                            <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>DLMG</strong></h3>
-                            <span class="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wider border border-neutral-300 dark:border-neutral-800 px-2 py-0.5 rounded-full">VideoClip</span>
+                    <!-- Video 4: DLMG -->
+                    <div class="group/card relative space-y-3.5 rounded-3xl border border-neutral-200/80 bg-white p-3.5 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-700">
+                        <div class="flex items-center justify-between px-1">
+                            <h3 class="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">DLMG</h3>
+                            <span class="inline-flex items-center rounded-full bg-neutral-100 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">VideoClip</span>
                         </div>
-                        <div class="video-container aspect-video w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="PdbWiaICitM">
-                            <img src="https://img.youtube.com/vi/PdbWiaICitM/maxresdefault.jpg" alt="DLMG" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/10 transition flex items-center justify-center">
-                                <div class="w-14 h-14 rounded-full bg-neutral-900/80 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
-                                    <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                        <div class="video-container group/video relative aspect-video w-full cursor-pointer overflow-hidden rounded-2xl bg-neutral-950 shadow-inner" data-video-id="PdbWiaICitM">
+                            <img src="https://img.youtube.com/vi/PdbWiaICitM/maxresdefault.jpg" alt="DLMG" class="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover/video:scale-105 group-hover/video:opacity-100">
+                            <div class="absolute inset-0 bg-neutral-950/20 transition-colors duration-300 group-hover/video:bg-neutral-950/10"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-xl backdrop-blur-md transition-all duration-300 group-hover/video:scale-110 group-hover/video:bg-white dark:bg-neutral-900/90 dark:text-white dark:group-hover/video:bg-neutral-900">
+                                    <i class="fa-solid fa-play ml-0.5 text-xs"></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="text-xs text-neutral-600 dark:text-neutral-400 flex flex-wrap gap-x-2 gap-y-1">
-                            &bull; <span>Riprese</span>
-                            &bull; <span>Montaggio video</span>
-                            &bull; <span>Audio</span>
+                        <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+                            <span class="inline-flex items-center gap-1 rounded-lg bg-neutral-100 px-2 py-1 text-[11px] font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300">
+                                <i class="fa-solid fa-video text-[10px] text-neutral-400"></i> Riprese
+                            </span>
+                            <span class="inline-flex items-center gap-1 rounded-lg bg-neutral-100 px-2 py-1 text-[11px] font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300">
+                                <i class="fa-solid fa-scissors text-[10px] text-neutral-400"></i> Montaggio video
+                            </span>
+                            <span class="inline-flex items-center gap-1 rounded-lg bg-neutral-100 px-2 py-1 text-[11px] font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300">
+                                <i class="fa-solid fa-sliders text-[10px] text-neutral-400"></i> Audio
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -319,48 +348,53 @@
                 <!-- Categoria: Formato Verticale -->
                 <div id="vid-vertical" class="video-category hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     <!-- Verticale 1 -->
-                    <div class="space-y-3 max-w-xs mx-auto w-full">
-                        <div class="video-container aspect-[9/16] w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="l9jiaVhtKnw">
-                            <img src="https://img.youtube.com/vi/l9jiaVhtKnw/maxresdefault.jpg" alt="Verticale 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/10 transition flex items-center justify-center">
-                                <div class="w-12 h-12 rounded-full bg-neutral-900/80 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
-                                    <i class="fa-solid fa-play text-xs ml-0.5"></i>
+                    <div class="group/card relative space-y-3.5 rounded-3xl border border-neutral-200/80 bg-white p-3.5 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-700 max-w-xs mx-auto w-full">
+                        <div class="flex items-center justify-between px-1">
+                            <h3 class="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Accademia del Panino/Reel</h3>
+                            <span class="inline-flex items-center rounded-full bg-neutral-100 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">Pubblicità</span>
+                        </div>
+                        <div class="video-container group/video relative aspect-[9/16] w-full cursor-pointer overflow-hidden rounded-2xl bg-neutral-950 shadow-inner" data-video-id="l9jiaVhtKnw">
+                            <img src="https://img.youtube.com/vi/l9jiaVhtKnw/maxresdefault.jpg" alt="Verticale 1" class="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover/video:scale-105 group-hover/video:opacity-100">
+                            <div class="absolute inset-0 bg-neutral-950/20 transition-colors duration-300 group-hover/video:bg-neutral-950/10"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-xl backdrop-blur-md transition-all duration-300 group-hover/video:scale-110 group-hover/video:bg-white dark:bg-neutral-900/90 dark:text-white dark:group-hover/video:bg-neutral-900">
+                                    <i class="fa-solid fa-play ml-0.5 text-xs"></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between text-xs">
-                            <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>Accademia del Panino/Reel</strong></h3>
-                            <span class="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wider border border-neutral-300 dark:border-neutral-800 px-2 py-0.5 rounded-full">Pubblicità Social</span>
-                        </div>
                     </div>
+
                     <!-- Verticale 2 -->
-                    <div class="space-y-3 max-w-xs mx-auto w-full">
-                        <div class="video-container aspect-[9/16] w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="bBuBawO9GAM">
-                            <img src="https://img.youtube.com/vi/bBuBawO9GAM/maxresdefault.jpg" alt="Verticale 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/10 transition flex items-center justify-center">
-                                <div class="w-12 h-12 rounded-full bg-neutral-900/80 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
-                                    <i class="fa-solid fa-play text-xs ml-0.5"></i>
+                    <div class="group/card relative space-y-3.5 rounded-3xl border border-neutral-200/80 bg-white p-3.5 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-700 max-w-xs mx-auto w-full">
+                        <div class="flex items-center justify-between px-1">
+                            <h3 class="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Pleasure/Reel</h3>
+                            <span class="inline-flex items-center rounded-full bg-neutral-100 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">Verticale</span>
+                        </div>
+                        <div class="video-container group/video relative aspect-[9/16] w-full cursor-pointer overflow-hidden rounded-2xl bg-neutral-950 shadow-inner" data-video-id="bBuBawO9GAM">
+                            <img src="https://img.youtube.com/vi/bBuBawO9GAM/maxresdefault.jpg" alt="Verticale 2" class="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover/video:scale-105 group-hover/video:opacity-100">
+                            <div class="absolute inset-0 bg-neutral-950/20 transition-colors duration-300 group-hover/video:bg-neutral-950/10"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-xl backdrop-blur-md transition-all duration-300 group-hover/video:scale-110 group-hover/video:bg-white dark:bg-neutral-900/90 dark:text-white dark:group-hover/video:bg-neutral-900">
+                                    <i class="fa-solid fa-play ml-0.5 text-xs"></i>
                                 </div>
                             </div>
-                        </div>
-                        <div class="flex items-center justify-between text-xs">
-                            <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>Pleasure/Reel</strong></h3>
-                            <span class="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wider border border-neutral-300 dark:border-neutral-800 px-2 py-0.5 rounded-full">Verticale</span>
                         </div>
                     </div>
+
                     <!-- Verticale 3 -->
-                    <div class="space-y-3 max-w-xs mx-auto w-full">
-                        <div class="video-container aspect-[9/16] w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-sm relative cursor-pointer group" data-video-id="istmXarvRvA">
-                            <img src="https://img.youtube.com/vi/istmXarvRvA/maxresdefault.jpg" alt="Verticale 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/10 transition flex items-center justify-center">
-                                <div class="w-12 h-12 rounded-full bg-neutral-900/80 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
-                                    <i class="fa-solid fa-play text-xs ml-0.5"></i>
+                    <div class="group/card relative space-y-3.5 rounded-3xl border border-neutral-200/80 bg-white p-3.5 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-700 max-w-xs mx-auto w-full">
+                        <div class="flex items-center justify-between px-1">
+                            <h3 class="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Reel / Short 3</h3>
+                            <span class="inline-flex items-center rounded-full bg-neutral-100 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">Verticale</span>
+                        </div>
+                        <div class="video-container group/video relative aspect-[9/16] w-full cursor-pointer overflow-hidden rounded-2xl bg-neutral-950 shadow-inner" data-video-id="">
+                            <img src="https://img.youtube.com/vi//maxresdefault.jpg" alt="Verticale 3" class="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover/video:scale-105 group-hover/video:opacity-100">
+                            <div class="absolute inset-0 bg-neutral-950/20 transition-colors duration-300 group-hover/video:bg-neutral-950/10"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-xl backdrop-blur-md transition-all duration-300 group-hover/video:scale-110 group-hover/video:bg-white dark:bg-neutral-900/90 dark:text-white dark:group-hover/video:bg-neutral-900">
+                                    <i class="fa-solid fa-play ml-0.5 text-xs"></i>
                                 </div>
                             </div>
-                        </div>
-                        <div class="flex items-center justify-between text-xs">
-                            <h3 class="font-medium text-neutral-900 dark:text-neutral-100"><strong>Reel / Short 3</strong></h3>
-                            <span class="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wider border border-neutral-300 dark:border-neutral-800 px-2 py-0.5 rounded-full">Verticale</span>
                         </div>
                     </div>
                 </div>
@@ -596,6 +630,7 @@
         videoContainers.forEach(container => {
             container.addEventListener('click', () => {
                 const videoId = container.getAttribute('data-video-id');
+                if (!videoId) return;
                 const iframe = document.createElement('iframe');
                 iframe.setAttribute('class', 'w-full h-full');
                 iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1`);
